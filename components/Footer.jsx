@@ -109,15 +109,13 @@ export default function Footer() {
               <li className="flex gap-3 items-start leading-relaxed">
                 <MapPin className="text-luxury-gold shrink-0 mt-1" size={18} />
                 <span>
-                  Shop No. S 1, Ground Floor,<br />
-                  Sai Smarth Appts, Near Army Camp,<br />
-                  Merces, [city_name],[State_name] – 403005
+                  Sample _address
                 </span>
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="text-luxury-gold shrink-0" size={16} />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+918240602352" className="hover:text-luxury-gold transition-colors">8867719927</a>
+                  <a href="tel:+918240602352" className="hover:text-luxury-gold transition-colors">+91 8240602352</a>
                   
                 </div>
               </li>
