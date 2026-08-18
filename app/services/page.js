@@ -16,7 +16,7 @@ function DetailedServiceCard({ service, index }) {
   const whatsappMessage = encodeURIComponent(
     `Hi Di Versile Interior, I am interested in your ${service.name} service. Please share more details.`
   );
-  const enquiryUrl = `https://wa.me/918867719927?text=${whatsappMessage}`;
+  const enquiryUrl = `https://wa.me/918240602352?text=${whatsappMessage}`;
 
   return (
     <motion.div

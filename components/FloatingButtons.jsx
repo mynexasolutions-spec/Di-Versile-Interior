@@ -8,12 +8,12 @@ export default function FloatingButtons() {
   const [showWhatsappTooltip, setShowWhatsappTooltip] = useState(false);
   const [showCallTooltip, setShowCallTooltip] = useState(false);
 
-  const whatsappNumber = '918867719927';
+  const whatsappNumber = '918240602352';
   const whatsappMessage = encodeURIComponent(
     'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-  const callUrl = 'tel:+918867719927';
+  const callUrl = 'tel:+918240602352';
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">

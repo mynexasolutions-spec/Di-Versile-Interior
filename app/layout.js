@@ -57,11 +57,11 @@ export default function RootLayout({ children }) {
     "name": "Di Versile Interior",
     "image": "https://creativedecorgoa.com/logo.png",
     "url": "https://creativedecorgoa.com",
-    "telephone": "+918867719927",
+    "telephone": "+918240602352",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shop No. S 1, Ground Floor, Sai Smarth Appts, Near Army Camp, Merces",
+      "streetAddress": "Sample",
       "addressLocality": "[city_name]",
       "addressRegion": "Goa",
       "postalCode": "403005",

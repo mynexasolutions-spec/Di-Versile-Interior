@@ -171,7 +171,7 @@ export default function ServiceDetailPage({ params }) {
 - Phone: ${form.phone}
 - Details: ${form.msg || 'Interested in this service.'}`;
     
-    window.location.href = `https://wa.me/918867719927?text=${encodeURIComponent(finalMsg)}`;
+    window.location.href = `https://wa.me/918240602352?text=${encodeURIComponent(finalMsg)}`;
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -414,8 +414,8 @@ export default function ServiceDetailPage({ params }) {
                 <span className="text-[10px] font-bold text-luxury-charcoalLight/60 uppercase tracking-widest">
                   Or Call us Directly
                 </span>
-                <a href="tel:+918867719927" className="block text-base font-extrabold text-luxury-charcoal hover:text-luxury-gold mt-1 transition-colors">
-                  8867719927
+                <a href="tel:+918240602352" className="block text-base font-extrabold text-luxury-charcoal hover:text-luxury-gold mt-1 transition-colors">
+                  8240602352
                 </a>
               </div>
 

@@ -32,7 +32,7 @@ export default function Footer() {
             {/* Contact Buttons (WhatsApp & Mail) */}
             <div className="flex items-center gap-3 mt-2">
               <a
-                href="https://wa.me/918867719927"
+                href="https://wa.me/918240602352"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:bg-green-600 hover:text-white hover:border-green-600 hover:shadow-md transition-all duration-300 flex items-center justify-center cursor-pointer"

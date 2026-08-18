@@ -285,7 +285,7 @@ export default function Navbar() {
               {/* Fixed Footer Buttons */}
               <div className="flex flex-col gap-4 mt-auto">
                 <a
-                  href="tel:+918867719927"
+                  href="tel:+918240602352"
                   className="flex items-center justify-center gap-2 py-3 rounded-full bg-luxury-beigeDark text-luxury-charcoal font-semibold text-sm transition-all"
                 >
                   <Phone size={16} />

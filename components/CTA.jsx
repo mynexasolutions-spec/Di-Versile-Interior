@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Phone, ArrowRight } from 'lucide-react';
 
 export default function CTA() {
-  const whatsappUrl = `https://wa.me/918867719927?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/918240602352?text=${encodeURIComponent(
     'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
   )}`;
 
@@ -50,11 +50,11 @@ export default function CTA() {
               {/* Right Column: Action Buttons (5 cols) */}
               <div className="lg:col-span-5 flex flex-col gap-4 w-full">
                 <a
-                  href="tel:+918867719927"
+                  href="tel:+918240602352"
                   className="group flex items-center justify-center gap-3 h-16 px-8 gold-gradient text-luxury-charcoalDark font-extrabold rounded-2xl text-xs uppercase tracking-widest shadow-md hover:shadow-lg hover:shadow-luxury-gold/25 scale-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                 >
                   <Phone size={18} />
-                  Call Now — 8867719927
+                  Call Now — 8240602352
                 </a>
 
                 <a

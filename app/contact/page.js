@@ -32,7 +32,7 @@ export default function Contact() {
 - Service Required: ${formData.service || 'General Enquiry'}
 - Message: ${formData.message}`;
 
-    const whatsappUrl = `https://wa.me/918867719927?text=${encodeURIComponent(messageText)}`;
+    const whatsappUrl = `https://wa.me/918240602352?text=${encodeURIComponent(messageText)}`;
     
     // Redirect to WhatsApp (uses window.location.href to bypass browser popup blockers)
     window.location.href = whatsappUrl;
@@ -84,12 +84,10 @@ export default function Contact() {
               <div className="flex-grow z-10">
                 <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Call Us</h3>
                 <div className="flex flex-col gap-1.5">
-                  <a href="tel:8867719927" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold">
-                    8867719927
+                  <a href="tel:8240602352" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold">
+                    8240602352
                   </a>
-                  <a href="tel:9187619927" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold">
-                    9187619927
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -121,9 +119,7 @@ export default function Contact() {
               <div className="flex-grow z-10">
                 <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Visit Our Store</h3>
                 <p className="text-sm sm:text-base text-luxury-charcoalLight leading-relaxed font-semibold">
-                  Shop No. S 1, Ground Floor,<br />
-                  Sai Smarth Appts, Near Army Camp,<br />
-                  Merces, [city_name],[State_name] – 403005
+                 Sample
                 </p>
               </div>
             </div>
