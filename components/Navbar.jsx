@@ -55,7 +55,7 @@ export default function Navbar() {
               <div className="relative w-36 h-11 sm:w-44 sm:h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <img
                   src="/logo.png"
-                  alt="Creative Decor Logo"
+                  alt="Di Versile Interior Logo"
                   className="w-full h-full object-contain filter drop-shadow-sm transition-all duration-300"
                 />
               </div>
@@ -196,7 +196,7 @@ export default function Navbar() {
                   <div className="relative w-32 h-10 flex items-center justify-center">
                     <img
                       src="/logo.png"
-                      alt="Creative Decor Logo"
+                      alt="Di Versile Interior Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>

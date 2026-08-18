@@ -12,21 +12,21 @@ const slides = [
     image: '/images/Hero/hero1.png',
     headline1: 'Your Dream Space,',
     headline2: 'Crafted.',
-    sub: 'Premium home furnishing, flooring, curtains, wallpapers, POP ceilings, electrical & painting — all under one roof. Trusted by hundreds of Goan homes.',
+    sub: 'Complete interior & exterior work — ply & wooden furniture, flooring, false ceilings, electrical, putty & painting, and more, all under one roof. Trusted by hundreds of[State_name]n homes.',
   },
   {
     id: 2,
     image: '/images/Hero/hero2.png',
     headline1: 'Stunning Interior Designs,',
     headline2: 'Delivered.',
-    sub: 'From luxurious furnishings and flooring to curtains, wallpapers, POP ceilings, electrical solutions and painting — everything you need for a beautifully finished home.',
+    sub: 'From ply & wooden furniture and flooring to false ceilings, electrical work, and painting — plus toughened glass, fabrication, and ACP cladding for exteriors.',
   },
   {
     id: 3,
     image: '/images/Hero/hero3.png',
     headline1: 'Premium Home Furnishings,',
     headline2: 'Perfected.',
-    sub: 'Discover premium furnishing and interior solutions — from elegant floors and curtains to designer walls, ceilings, lighting and professional painting.',
+    sub: 'Discover premium interior & exterior solutions — from elegant flooring and wooden furniture to decorative walls, ceilings, and professional painting.',
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 self-start mb-4">
             <MapPin size={11} className="text-luxury-gold shrink-0" />
             <span className="text-[10px] font-extrabold tracking-wider text-white uppercase">
-              Panaji, Goa <span className="text-luxury-gold font-black">•</span> Interior Solutions &amp; Furnishing
+              [city_name],[State_name] <span className="text-luxury-gold font-black">•</span> Interior Solutions &amp; Furnishing
             </span>
           </div>
 
@@ -211,7 +211,7 @@ export default function Hero() {
             >
               <MapPin size={14} className="text-luxury-gold shrink-0" />
               <span className="text-xs font-extrabold tracking-widest text-white uppercase flex items-center gap-1.5">
-                Panaji, Goa
+                [city_name],[State_name]
                 <span className="text-luxury-gold/60">•</span>
                 <span className="text-white/80 font-semibold">Interior Solutions &amp; Home Furnishing</span>
               </span>

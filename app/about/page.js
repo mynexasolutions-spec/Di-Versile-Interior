@@ -7,15 +7,17 @@ import CTA from '@/components/CTA';
 
 export default function About() {
   const serviceCategories = [
-    'Home Furnishing',
-    'Interior Solutions',
-    'Flooring (Wooden, PVC, Carpeting)',
-    'Curtains & Blinds',
-    'Wall Solutions & Paneling',
-    'Mattresses',
+    'Interior Ply & Wooden Furniture',
+    'Flooring (Wooden, PVC, Tile)',
     'False Ceiling (POP/PUP)',
     'Electrical Work',
-    'Painting Services',
+    'Putty & Painting',
+    'Wall Decorative',
+    'Toughened Glass',
+    'Fabrication',
+    'ACP Cladding',
+    'Box Grill',
+    'Outside Painting',
   ];
 
   return (
@@ -34,11 +36,11 @@ export default function About() {
               Get to Know Us
             </span>
             <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
-              About <span className="text-gold-gradient">Creative Decor</span>
+              About <span className="text-gold-gradient">Di Versile Interior</span>
             </h1>
             <div className="w-20 h-[3px] gold-gradient mx-auto my-6 rounded-full" />
             <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-              Providing complete interior solutions, home furnishings, sales, and service with a singular focus on premium quality, customer needs, and exceptional craftsmanship in Panaji, Goa.
+              Providing complete interior solutions, home furnishings, sales, and service with a singular focus on premium quality, customer needs, and exceptional craftsmanship in [city_name],[State_name].
             </p>
           </div>
 
@@ -59,7 +61,7 @@ export default function About() {
                 <div className="flex-grow z-10">
                   <h2 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Who We Are</h2>
                   <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
-                    Creative Decor is a dedicated partner for premium home improvement and interior solutions. Located in Panaji, we cater to Goan homes and offices, delivering high-end materials combined with expert end-to-end services.
+                    Di Versile Interior is a dedicated partner for premium home improvement and interior solutions. Located in [city_name], we cater to[State_name]n homes and offices, delivering high-end materials combined with expert end-to-end services.
                   </p>
                 </div>
               </div>
@@ -75,7 +77,7 @@ export default function About() {
                 <div className="flex-grow z-10">
                   <h2 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">What We Do</h2>
                   <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
-                    We cover everything your space requires. From customized sofas, luxury curtains, blinds, and wallpapers to wooden flooring, pop ceilings, electrical layout wiring, and exterior/interior painting solutions.
+                    We cover everything your space requires. From ply &amp; wooden furniture, flooring, and false ceilings to electrical wiring, putty &amp; painting, and wall decorative finishes indoors — plus toughened glass, fabrication, ACP cladding, box grill, and outside painting for exteriors.
                   </p>
                 </div>
               </div>
@@ -107,7 +109,7 @@ export default function About() {
                 <div className="absolute top-0 left-0 right-0 h-[3.5px] gold-gradient z-20" />
                 <Image
                   src="/images/about.png"
-                  alt="Creative Decor Studio Interior"
+                  alt="Di Versile Interior Studio Interior"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
@@ -157,7 +159,7 @@ export default function About() {
             </div>
             <div className="flex-grow">
               <h3 className="font-sans text-xl font-extrabold tracking-tight text-luxury-charcoal mb-3 transition-colors duration-300 group-hover:text-luxury-gold">
-                Why Customers Trust Creative Decor
+                Why Customers Trust Di Versile Interior
               </h3>
               <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-5">
                 In interior solutions, reliability and quality of materials make all the difference. We partner directly with premium brands such as D'Decor, Sleepwell, Somfy, and Fabio Furnishings to deliver authentic, warrantied products. Together with our experienced staff who execute electrical and painting work, we guarantee peace of mind.

@@ -10,7 +10,7 @@ export default function FloatingButtons() {
 
   const whatsappNumber = '918867719927';
   const whatsappMessage = encodeURIComponent(
-    'Hi Creative Decor, I would like to enquire about your interior and home furnishing services.'
+    'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const callUrl = 'tel:+918867719927';
@@ -27,7 +27,7 @@ export default function FloatingButtons() {
               exit={{ opacity: 0, x: 10, scale: 0.95 }}
               className="absolute right-16 px-3 py-1.5 bg-luxury-charcoal text-white text-xs font-semibold rounded-md shadow-md whitespace-nowrap"
             >
-              Call Creative Decor
+              Call Di Versile Interior
             </motion.div>
           )}
         </AnimatePresence>
@@ -38,7 +38,7 @@ export default function FloatingButtons() {
           onMouseLeave={() => setShowCallTooltip(false)}
           onClick={() => setShowCallTooltip(false)}
           className="w-14 h-14 rounded-full bg-luxury-charcoal text-luxury-gold flex items-center justify-center shadow-lg border border-luxury-gold/30 cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gold/50"
-          aria-label="Call Creative Decor"
+          aria-label="Call Di Versile Interior"
           whileHover={{ scale: 1.1, translateY: -2 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -69,7 +69,7 @@ export default function FloatingButtons() {
           onMouseLeave={() => setShowWhatsappTooltip(false)}
           onClick={() => setShowWhatsappTooltip(false)}
           className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400"
-          aria-label="Chat on WhatsApp with Creative Decor"
+          aria-label="Chat on WhatsApp with Di Versile Interior"
           whileHover={{ scale: 1.1, translateY: -2 }}
           whileTap={{ scale: 0.95 }}
         >

@@ -10,115 +10,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Mocked detailed info for each service to populate the detail pages rich text
 const serviceDetailsExtra = {
-  sofa: {
+  'ply-wooden-furniture': {
     features: [
-      'Bespoke frame customisation according to room size',
-      'Wide choice of luxury fabrics (velvet, leatherette, premium linen)',
-      'High-density foam options (32D to 40D) for durability & comfort',
-      'Structural warranty and premium finishing on joints',
+      'Bespoke wardrobes, TV units, and modular furniture built to size',
+      'Chemically treated, termite-proof marine & commercial ply',
+      'Wide choice of laminates, veneers, and premium wood finishes',
+      'Structural warranty and premium finishing on joints & hinges',
     ],
     faqs: [
-      { q: 'Can you replicate a sofa design from a photo?', a: 'Yes! We specialise in custom sofa designs. Just share a photo of your desired sofa design and dimensions, and our team will craft it accordingly.' },
-      { q: 'What materials do you use for frames?', a: 'We use chemically treated, seasoned solid wood (such as Neem or Teakwood) to ensure frames are termite-proof and highly durable.' }
+      { q: 'Can you replicate a furniture design from a photo?', a: 'Yes! We specialise in custom furniture. Just share a photo of your desired design and dimensions, and our team will craft it accordingly.' },
+      { q: 'What materials do you use?', a: 'We use chemically treated, seasoned marine/commercial ply and solid wood to ensure furniture is termite-proof and highly durable.' }
     ]
   },
-  wallpaper: {
+  flooring: {
     features: [
-      'Imported non-woven and vinyl texture choices',
-      'Custom printed murals tailored to wall sizes',
-      'Quick, mess-free professional installation in a few hours',
-      'Easy to clean, damp-proof, and fire-retardant options',
-    ],
-    faqs: [
-      { q: 'How long does wallpaper last?', a: 'With proper installation and care, premium wallpapers can easily last 7 to 10 years without peeling or fading.' },
-      { q: 'Can you install wallpaper on damp walls?', a: 'We highly recommend treating wall dampness before wallpaper application to prevent mould and guarantee longevity. We also offer damp-proof wall treatments.' }
-    ]
-  },
-  'wooden-flooring': {
-    features: [
+      'Wooden, PVC, vinyl, and tile flooring options for every space',
       'AC4 & AC5 heavy-duty scratch-resistant laminate flooring',
-      'Premium engineered oak & teak hardwood choices',
       'Uniclic locking technology for seamless joint finishes',
-      'Soundproofing underlay padding included in installations',
+      'Anti-slip, waterproof options ideal for kitchens & bathrooms',
     ],
     faqs: [
-      { q: 'Is wooden flooring suitable for kitchens or bathrooms?', a: 'We advise using PVC or SPC waterproof flooring for high-moisture zones like kitchens/bathrooms, and saving laminate wooden flooring for bedrooms and living rooms.' },
-      { q: 'How do you clean wooden floors?', a: 'A lightly damp microfibre mop is all that is needed. Avoid using excessive water or harsh cleaning chemicals.' }
+      { q: 'Which flooring is best for kitchens or bathrooms?', a: 'We advise PVC or waterproof vinyl flooring for high-moisture zones like kitchens/bathrooms, and wooden flooring for bedrooms and living rooms.' },
+      { q: 'How do you clean the floors?', a: 'A lightly damp microfibre mop is all that is needed for wooden floors. PVC and tile flooring can be cleaned with regular mopping.' }
     ]
   },
-  mattresses: {
-    features: [
-      'Certified orthopedic memory foam & pocket spring mattresses',
-      'Breathable organic pin-core latex for cooler sleep temperatures',
-      'Dual-comfort options (soft on one side, firm on reverse)',
-      'Custom sizing matching custom bed frames exactly',
-    ],
-    faqs: [
-      { q: 'Do you offer standard bed sizes?', a: 'Yes, we supply King, Queen, and Single sizes. Additionally, we customize sizes to fit custom designer beds perfectly.' },
-      { q: 'What brands do you supply?', a: 'We supply premium mattresses from Sleepwell and other leading orthopedic certified manufacturers.' }
-    ]
-  },
-  curtains: {
-    features: [
-      'Thousands of fabric catalogs (sheer, blackout, velvet, linen)',
-      'Custom tailored pleat styles (eyelet, pinch pleat, wave fold)',
-      'Heavy-duty motorized tracks with remote/app controls',
-      'Professional on-site measurements and steam-ironed hanging',
-    ],
-    faqs: [
-      { q: 'Do you provide black-out curtains for media rooms?', a: 'Yes, we provide 100% black-out curtain fabrics and linings that block light completely, ideal for bedrooms and home theatres.' },
-      { q: 'How long does tailoring take?', a: 'Once fabric is chosen and measurements are finalised, custom curtain tailoring and installation takes about 7 to 10 days.' }
-    ]
-  },
-  'wall-paneling': {
-    features: [
-      'Premium charcoal louvers and fluted wall panel layouts',
-      'Acoustic felt backing option for media walls',
-      'Water-proof and termite-free WPC panel selections',
-      'Sleek integrated metal trim tracks and warm LED profiles',
-    ],
-    faqs: [
-      { q: 'Can fluted panels be installed on uneven walls?', a: 'Yes, our installers construct a solid backing grid frame to level out uneven surfaces before installing the designer panels.' },
-      { q: 'Are charcoal panels water-resistant?', a: 'Yes, charcoal louvers and WPC panels are completely water-resistant, making them ideal for high humidity zones.' }
-    ]
-  },
-  carpet: {
-    features: [
-      'Premium wall-to-wall carpets for office & hotel layouts',
-      'Custom size hand-tufted statement rugs',
-      'Anti-stain and high-pile nylon fibers for cozy steps',
-      'Professional lay fitting with edge grippers',
-    ],
-    faqs: [
-      { q: 'Are carpets difficult to maintain?', a: 'Regular vacuuming keeps them clean. Our premium carpets feature built-in stain-resistant treatments for easier cleaning.' },
-      { q: 'Do you install carpets in offices?', a: 'Yes! We install durable commercial-grade loop pile carpets ideal for offices, conference rooms, and hallways.' }
-    ]
-  },
-  'pvc-flooring': {
-    features: [
-      '100% waterproof PVC rolls, planks, and luxury vinyl tiles (LVT)',
-      'Heavy-duty commercial wear layer (0.3mm to 0.5mm)',
-      'Anti-slip and acoustic insulation characteristics',
-      'Fast floor gluing, compatible with underfloor heating',
-    ],
-    faqs: [
-      { q: 'Is PVC flooring durable for busy commercial spaces?', a: 'Yes, our commercial LVT and SPC flooring are designed to withstand heavy foot traffic, roll chairs, and high wear.' },
-      { q: 'Can you install PVC planks directly over tile?', a: 'Yes! As long as the subfloor is flat and grout lines are filled with a leveling compound, we can apply PVC flooring directly.' }
-    ]
-  },
-  blinds: {
-    features: [
-      'Elegant Zebra, Roller, Venetian, and Roman blinds',
-      'Heat-shielding solar fabrics for direct Goa sun protection',
-      'Sleek cordless manual pulls or smart app motorization',
-      'Dust-repellent fabrics that are easy to wipe clean',
-    ],
-    faqs: [
-      { q: 'What is the advantage of Zebra blinds?', a: 'Zebra blinds offer dual horizontal layers of sheer and solid fabric, allowing you to alternate between privacy and soft natural light easily.' },
-      { q: 'Do you automate window blinds?', a: 'Yes, we integrate motorized Somfy systems that connect to your smartphones or home automation consoles.' }
-    ]
-  },
-  'fall-ceiling': {
+  'false-ceiling': {
     features: [
       'Premium POP and gypsum ceilings with high structural strength',
       'Warm indirect LED cove lighting channel integration',
@@ -132,62 +48,98 @@ const serviceDetailsExtra = {
   },
   electrical: {
     features: [
-      'Certified smart lighting layout layouts & panel fitting',
+      'Certified smart lighting layouts & panel fitting',
       'Concealed safe copper wiring with premium switches',
       'Accurate circuit layout to prevent overloading risks',
       'Professional fitting of luxury chandeliers, fans, and spot tracks',
     ],
     faqs: [
-      { q: 'Do you handle full home rewiring?', a: 'Yes, we handle complete electrical layouts for new builds and renovation projects across Goa.' },
+      { q: 'Do you handle full home rewiring?', a: 'Yes, we handle complete electrical layouts for new builds and renovation projects across[State_name].' },
       { q: 'Are your electricians certified?', a: 'Yes, all our site works are executed by licensed and highly experienced electrical contractors.' }
     ]
   },
-  painting: {
+  'putty-painting': {
     features: [
+      'Smooth putty base coats for a flawless painting surface',
       'Ultra-luxury smooth emulsions and wall textures',
       'Damp-proof paint coats block moisture and peeling',
-      'Professional dust-free sanding machines for ultimate smooth finish',
-      'Accurate shade matching and accent wall layout consultation',
+      'Accurate shade matching and accent wall consultation',
     ],
     faqs: [
-      { q: 'How many coats of paint do you apply?', a: 'We apply 1 coat of primer, followed by putty repair sanding, and 2 full coats of premium luxury emulsion paint.' },
+      { q: 'How many coats do you apply?', a: 'We apply putty repair and sanding, followed by 1 coat of primer and 2 full coats of premium luxury emulsion paint.' },
       { q: 'Do you offer damp protection?', a: 'Yes, we apply specialized base coatings that cure and seal internal damp walls before applying final paints.' }
     ]
   },
-  'glass-filming': {
+  'wall-decorative': {
     features: [
-      'Premium solar control films to reduce indoor heat and AC costs',
-      'Frosted and decorative patterns for office and home privacy',
-      'UV blocking technology (up to 99% rejection) to protect furniture',
-      'Safety and security films that prevent glass shattering hazards',
+      'Imported non-woven and vinyl wallpaper texture choices',
+      'Premium charcoal louvers and fluted wall panel layouts',
+      'Custom accent walls and decorative wall texture finishes',
+      'Sleek integrated metal trim tracks and warm LED profiles',
     ],
     faqs: [
-      { q: 'Does glass film block daylight completely?', a: 'No, we offer various transparency levels from frosted and translucent privacy films to solar control films that allow natural light while blocking heat and glare.' },
-      { q: 'Can the film be removed or replaced later?', a: 'Yes, our glass films are designed to be long-lasting but can be professionally removed without damaging the glass surface.' }
+      { q: 'How long does wallpaper last?', a: 'With proper installation and care, premium wallpapers can easily last 7 to 10 years without peeling or fading.' },
+      { q: 'Can wall panels be installed on uneven walls?', a: 'Yes, our installers construct a solid backing grid frame to level out uneven surfaces before installing decorative panels.' }
     ]
   },
-  'sofa-cleaning': {
+  'toughened-glass': {
     features: [
-      'Advanced injection-extraction deep vacuum cleaning',
-      'Eco-friendly and non-toxic fabric sanitizing chemicals',
-      'Tough stain, grease, and odor removal treatments',
-      'Leather sofa conditioning, polishing, and restoration',
+      'High-strength tempered glass for windows, doors, and railings',
+      'Custom cut sizes and thicknesses for facades and partitions',
+      'Shatter-resistant safety glass built to IS certified standards',
+      'Clear, frosted, and tinted finish options available',
     ],
     faqs: [
-      { q: 'How long does a sofa take to dry after deep cleaning?', a: 'Typically, it takes about 4 to 6 hours to dry completely depending on the fabric type and room ventilation.' },
-      { q: 'How often should I get my sofa professionally cleaned?', a: 'We recommend professional sofa deep cleaning every 6 to 12 months to maintain hygiene, remove allergens, and extend fabric life.' }
+      { q: 'Is toughened glass safer than regular glass?', a: 'Yes, toughened glass is up to 5 times stronger than regular glass and breaks into small granular pieces instead of sharp shards, greatly reducing injury risk.' },
+      { q: 'Can toughened glass be cut after treatment?', a: 'No, toughened glass must be cut to exact size before the tempering process. We take precise on-site measurements before fabrication.' }
     ]
   },
-  'monsoon-blinds': {
+  fabrication: {
     features: [
-      '100% waterproof transparent PVC sheets for unobstructed views',
-      'High wind resistance with robust stainless steel cables and tracks',
-      'Protects outdoor furniture and balconies from heavy Goa rains',
-      'UV stabilized and scratch-resistant materials for year-round use',
+      'Custom railings, staircases, and gates in MS & SS finishes',
+      'Structural steel frameworks for canopies and pergolas',
+      'Rust-resistant powder coating and anti-corrosive treatments',
+      'Precision on-site welding and finishing by skilled fabricators',
     ],
     faqs: [
-      { q: 'Can monsoon blinds withstand high wind speeds during storms?', a: 'Yes, our monsoon blinds are constructed with reinforced guide cables and anchoring locks to withstand strong wind gusts without tearing.' },
-      { q: 'Are these blinds transparent?', a: 'Yes, they use premium high-clarity PVC sheets, ensuring you enjoy the outdoor view while remaining completely dry.' }
+      { q: 'Do you fabricate custom gate designs?', a: 'Yes, we design and fabricate custom gates, railings, and grills according to your architectural style and requirements.' },
+      { q: 'How do you protect metalwork from rust in[State_name]\'s climate?', a: 'We apply anti-corrosive primers and weatherproof powder coating finishes suited for[State_name]\'s humid, coastal climate.' }
+    ]
+  },
+  'acp-cladding': {
+    features: [
+      'Premium aluminium composite panels in a wide colour range',
+      'Weatherproof, lightweight, and low-maintenance facade finish',
+      'Conceals uneven walls for a sleek, modern exterior look',
+      'Fire-retardant (FR) core panel options available',
+    ],
+    faqs: [
+      { q: 'Is ACP cladding durable in coastal weather?', a: 'Yes, ACP panels are weatherproof and corrosion-resistant, making them well suited for[State_name]\'s humid, coastal conditions.' },
+      { q: 'Can ACP cladding be installed over existing walls?', a: 'Yes, ACP cladding is fitted onto a supporting frame and can be installed over most existing exterior wall surfaces.' }
+    ]
+  },
+  'box-grill': {
+    features: [
+      'Sturdy MS/SS box grills for windows and balconies',
+      'Child and pet-safe protective railing designs',
+      'Rust-resistant powder coated finishes for long life',
+      'Custom sizing and minimalist grill pattern options',
+    ],
+    faqs: [
+      { q: 'Do box grills block the view from windows?', a: 'No, our box grill designs use slim bar spacing that maintains an open, unobstructed view while ensuring safety.' },
+      { q: 'Are box grills weatherproof?', a: 'Yes, all our box grills are powder coated with rust-resistant, weatherproof finishes suited for outdoor use.' }
+    ]
+  },
+  'outside-painting': {
+    features: [
+      'Weatherproof, UV-resistant exterior emulsions and textures',
+      'Waterproofing base coats to prevent seepage and dampness',
+      'Professional scaffolding and surface preparation before painting',
+      'Long-lasting finishes built to withstand[State_name]\'s monsoon climate',
+    ],
+    faqs: [
+      { q: 'How long does exterior paint last in[State_name]\'s climate?', a: 'With premium weatherproof paints and proper surface prep, exterior paint typically lasts 5 to 7 years even in[State_name]\'s humid, monsoon-heavy climate.' },
+      { q: 'Do you apply waterproofing before painting?', a: 'Yes, we recommend and apply waterproof base coats on exterior walls to prevent seepage before the final paint layers.' }
     ]
   }
 };
@@ -214,7 +166,7 @@ export default function ServiceDetailPage({ params }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const finalMsg = `Hi Creative Decor, I would like to book a site consultation for "${service.name}":
+    const finalMsg = `Hi Di Versile Interior, I would like to book a site consultation for "${service.name}":
 - Name: ${form.name}
 - Phone: ${form.phone}
 - Details: ${form.msg || 'Interested in this service.'}`;
@@ -296,7 +248,7 @@ export default function ServiceDetailPage({ params }) {
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <h2 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-4">Overview</h2>
               <p className="text-luxury-charcoalLight font-semibold text-base sm:text-lg leading-relaxed">
-                {service.description} Creative Decor brings decades of trusted material expertise directly to your home. We assist you from select material catalogs to customized fitting and lifetime service support, ensuring a smooth interior upgrade experience.
+                {service.description} Di Versile Interior brings decades of trusted material expertise directly to your home. We assist you from select material catalogs to customized fitting and lifetime service support, ensuring a smooth interior upgrade experience.
               </p>
             </div>
 
@@ -377,7 +329,7 @@ export default function ServiceDetailPage({ params }) {
 
               <div>
                 <span className="text-[10px] font-bold tracking-widest text-luxury-gold uppercase block mb-1">
-                  Goa Site Visit
+                 [State_name] Site Visit
                 </span>
                 <h3 className="font-sans text-xl font-extrabold text-luxury-charcoal">
                   Book a Consultation

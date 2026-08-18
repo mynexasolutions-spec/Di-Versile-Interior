@@ -112,7 +112,7 @@ export default function ServicesPreview() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed"
           >
-            From premium furnishing and wooden flooring to professional electrical and painting solutions, we provide complete, high-quality home improvements under one roof in Goa.
+            From ply &amp; wooden furniture, flooring, and false ceiling to electrical work, putty &amp; painting, and wall decorative finishes, we provide complete interior &amp; exterior work under one roof in[State_name].
           </motion.p>
         </div>
 

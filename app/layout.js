@@ -11,27 +11,27 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Creative Decor | Interior & Home Furnishing Solutions in Goa',
-  description: 'Creative Decor provides complete interior, home furnishing, flooring, curtains, wall paneling, electrical and painting solutions in Panaji, Goa.',
-  keywords: 'Creative Decor Goa, Interior solutions in Goa, Home furnishing in Goa, Interior services in Panaji, Home improvement services Goa, Sofa, Wallpaper, Wooden Flooring, Curtains, Wall Paneling, Mattresses, Electrical, Painting, Goa, Panaji',
+  title: 'Di Versile Interior | Interior & Exterior Work Solutions in[State_name]',
+  description: 'Di Versile Interior provides complete interior & exterior work including ply & wooden furniture, flooring, false ceiling, electrical, putty & painting, wall decorative, toughened glass, fabrication, ACP cladding, box grill and outside painting in [city_name],[State_name].',
+  keywords: 'Di Versile Interior[State_name], Interior solutions in[State_name], Exterior work in[State_name], Interior services in [city_name], Home improvement services[State_name], Ply Wooden Furniture, Flooring, False Ceiling, Electrical Work, Putty Painting, Wall Decorative, Toughened Glass, Fabrication, ACP Cladding, Box Grill, Outside Painting,[State_name], [city_name]',
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
-  authors: [{ name: 'Creative Decor' }],
-  creator: 'Creative Decor',
-  publisher: 'Creative Decor',
+  authors: [{ name: 'Di Versile Interior' }],
+  creator: 'Di Versile Interior',
+  publisher: 'Di Versile Interior',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Creative Decor | Interior & Home Furnishing Solutions in Goa',
-    description: 'Creative Decor provides complete interior, home furnishing, flooring, curtains, wall paneling, electrical and painting solutions in Panaji, Goa.',
+    title: 'Di Versile Interior | Interior & Exterior Work Solutions in[State_name]',
+    description: 'Di Versile Interior provides complete interior & exterior work including ply & wooden furniture, flooring, false ceiling, electrical, putty & painting, wall decorative, toughened glass, fabrication, ACP cladding, box grill and outside painting in [city_name],[State_name].',
     url: 'https://creativedecorgoa.com',
-    siteName: 'Creative Decor',
+    siteName: 'Di Versile Interior',
     locale: 'en_IN',
     type: 'website',
   },
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "Creative Decor",
+    "name": "Di Versile Interior",
     "image": "https://creativedecorgoa.com/logo.png",
     "url": "https://creativedecorgoa.com",
     "telephone": "+918867719927",
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Shop No. S 1, Ground Floor, Sai Smarth Appts, Near Army Camp, Merces",
-      "addressLocality": "Panaji",
+      "addressLocality": "[city_name]",
       "addressRegion": "Goa",
       "postalCode": "403005",
       "addressCountry": "IN"

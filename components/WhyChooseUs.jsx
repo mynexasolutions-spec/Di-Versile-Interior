@@ -48,14 +48,14 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
-            Why Creative Decor
+            Why Di Versile Interior
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
             Designed for <span className="text-gold-gradient">Trust</span> &amp; Quality
           </h2>
           <div className="w-20 h-[2.5px] gold-gradient mx-auto my-6 rounded-full" />
           <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-            We combine premium design craftsmanship with seamless execution, making us Goa’s preferred interior and furnishing provider.
+            We combine premium design craftsmanship with seamless execution, making us[State_name]’s preferred interior and furnishing provider.
           </p>
         </div>
 

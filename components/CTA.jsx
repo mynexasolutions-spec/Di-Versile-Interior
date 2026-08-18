@@ -6,7 +6,7 @@ import { Phone, ArrowRight } from 'lucide-react';
 
 export default function CTA() {
   const whatsappUrl = `https://wa.me/918867719927?text=${encodeURIComponent(
-    'Hi Creative Decor, I would like to enquire about your interior and home furnishing services.'
+    'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
   )}`;
 
   return (
@@ -43,7 +43,7 @@ export default function CTA() {
                   <span className="text-gold-gradient block sm:inline">Space?</span>
                 </h2>
                 <p className="text-luxury-charcoalLight font-semibold text-base sm:text-lg leading-relaxed max-w-2xl">
-                  Talk to Creative Decor for complete interior, furnishing, flooring, electrical, and painting solutions. We offer expert site consultations across Goa.
+                  Talk to Di Versile Interior for complete interior, furnishing, flooring, electrical, and painting solutions. We offer expert site consultations across[State_name].
                 </p>
               </div>
 

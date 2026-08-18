@@ -26,7 +26,7 @@ export default function Contact() {
 
     // Gather and format message
     const emailStr = formData.email ? `\n- Email: ${formData.email}` : '';
-    const messageText = `Hi Creative Decor, I would like to make an enquiry:
+    const messageText = `Hi Di Versile Interior, I would like to make an enquiry:
 - Name: ${formData.name}
 - Phone: ${formData.phone}${emailStr}
 - Service Required: ${formData.service || 'General Enquiry'}
@@ -104,8 +104,8 @@ export default function Contact() {
               </div>
               <div className="flex-grow z-10">
                 <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Email Address</h3>
-                <a href="mailto:creativedecorgoa@gmail.com" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold break-all">
-                  creativedecorgoa@gmail.com
+                <a href="mailto:diversileinterior@gmail.com" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold break-all">
+                  diversileinterior@gmail.com
                 </a>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                 <p className="text-sm sm:text-base text-luxury-charcoalLight leading-relaxed font-semibold">
                   Shop No. S 1, Ground Floor,<br />
                   Sai Smarth Appts, Near Army Camp,<br />
-                  Merces, Panaji, Goa – 403005
+                  Merces, [city_name],[State_name] – 403005
                 </p>
               </div>
             </div>

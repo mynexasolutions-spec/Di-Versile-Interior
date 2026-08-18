@@ -21,13 +21,13 @@ export default function Footer() {
               <div className="w-36 h-12 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <img
                   src="/logo.png"
-                  alt="Creative Decor Logo"
+                  alt="Di Versile Interior Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed font-medium">
-              All Interior Solutions, Sales and Service. Transform your space with our premium home furnishings, wooden flooring, custom curtains, electrical, and painting services in Goa.
+              Complete Interior &amp; Exterior Solutions, Sales and Service. Transform your space with our ply &amp; wooden furniture, flooring, electrical, putty &amp; painting, and exterior fabrication services in[State_name].
             </p>
             {/* Contact Buttons (WhatsApp & Mail) */}
             <div className="flex items-center gap-3 mt-2">
@@ -44,7 +44,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:creativedecorgoa@gmail.com"
+                href="mailto:diversileinterior@gmail.com"
                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:bg-luxury-gold hover:text-luxury-charcoalDark hover:border-luxury-gold hover:shadow-md transition-all duration-300 flex items-center justify-center cursor-pointer"
                 aria-label="Email"
                 title="Email Us"
@@ -80,14 +80,14 @@ export default function Footer() {
             <h3 className="font-sans text-xs tracking-[0.2em] font-extrabold uppercase text-luxury-gold mb-8">Featured Services</h3>
             <ul className="grid grid-cols-2 gap-4 font-medium">
               {[
-                { name: 'Sofa', link: '/services#sofa' },
-                { name: 'Wallpaper', link: '/services#wallpaper' },
-                { name: 'Flooring', link: '/services#wooden-flooring' },
-                { name: 'Curtains', link: '/services#curtains' },
-                { name: 'Wall Paneling', link: '/services#wall-paneling' },
-                { name: 'Mattresses', link: '/services#mattresses' },
-                { name: 'Electrical', link: '/services#electrical' },
-                { name: 'Painting', link: '/services#painting' },
+                { name: 'Ply & Wooden Furniture', link: '/services#ply-wooden-furniture' },
+                { name: 'Flooring', link: '/services#flooring' },
+                { name: 'False Ceiling', link: '/services#false-ceiling' },
+                { name: 'Electrical Work', link: '/services#electrical' },
+                { name: 'Putty & Painting', link: '/services#putty-painting' },
+                { name: 'Wall Decorative', link: '/services#wall-decorative' },
+                { name: 'ACP Cladding', link: '/services#acp-cladding' },
+                { name: 'Fabrication', link: '/services#fabrication' },
               ].map((serv, index) => (
                 <li key={index}>
                   <Link
@@ -111,20 +111,20 @@ export default function Footer() {
                 <span>
                   Shop No. S 1, Ground Floor,<br />
                   Sai Smarth Appts, Near Army Camp,<br />
-                  Merces, Panaji, Goa – 403005
+                  Merces, [city_name],[State_name] – 403005
                 </span>
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="text-luxury-gold shrink-0" size={16} />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+918867719927" className="hover:text-luxury-gold transition-colors">8867719927</a>
-                  <a href="tel:+919187619927" className="hover:text-luxury-gold transition-colors">9187619927</a>
+                  <a href="tel:+918240602352" className="hover:text-luxury-gold transition-colors">8867719927</a>
+                  
                 </div>
               </li>
               <li className="flex gap-3 items-center">
                 <Mail className="text-luxury-gold shrink-0" size={16} />
-                <a href="mailto:creativedecorgoa@gmail.com" className="hover:text-luxury-gold transition-colors break-all">
-                  creativedecorgoa@gmail.com
+                <a href="mailto:diversileinterior@gmail.com" className="hover:text-luxury-gold transition-colors break-all">
+                  diversileinterior@gmail.com
                 </a>
               </li>
             </ul>
@@ -133,10 +133,10 @@ export default function Footer() {
 
         {/* Footer Bottom copyright bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between mt-8 text-sm text-white/50 font-semibold border-t border-white/5 pt-8 gap-4">
-          <p className="text-center sm:text-left">© {currentYear} Creative Decor. All Rights Reserved.</p>
+          <p className="text-center sm:text-left">© {currentYear} Di Versile Interior. All Rights Reserved.</p>
           <div className="flex gap-2 items-center">
             <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
-            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">Panaji, Goa</span>
+            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">[city_name],[State_name]</span>
           </div>
         </div>
       </div>

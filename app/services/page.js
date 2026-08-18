@@ -14,7 +14,7 @@ function DetailedServiceCard({ service, index }) {
   const IconComponent = Icons[service.icon] || Icons.Home;
 
   const whatsappMessage = encodeURIComponent(
-    `Hi Creative Decor, I am interested in your ${service.name} service. Please share more details.`
+    `Hi Di Versile Interior, I am interested in your ${service.name} service. Please share more details.`
   );
   const enquiryUrl = `https://wa.me/918867719927?text=${whatsappMessage}`;
 
@@ -98,14 +98,14 @@ export default function Services() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3 animate-fade-in">
-            Complete Solutions
+            Service We Provide
           </span>
           <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
             Our <span className="text-gold-gradient">Services</span>
           </h1>
           <div className="w-20 h-[2.5px] bg-luxury-gold mx-auto my-6 rounded-full" />
           <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-            Creative Decor provides complete interior and home improvement solutions designed for modern spaces. From furniture upholstery and window drapes to pop false ceilings, electrical wirings, and painting in Goa.
+            Di Versile Interior offers complete, full interior &amp; exterior work designed for modern spaces. Indoors, we handle ply &amp; wooden furniture, flooring, false ceiling, electrical work, putty &amp; painting, and wall decorative finishes. Outdoors, we cover toughened glass, fabrication, ACP cladding, box grill, and outside painting, all delivered in[State_name].
           </p>
         </div>
 
