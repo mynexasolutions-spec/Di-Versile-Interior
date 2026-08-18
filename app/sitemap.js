@@ -3,7 +3,7 @@ import { services } from '@/data/services';
 export default async function sitemap() {
   const baseUrl = 'https://creativedecorgoa.com';
   
-  const staticRoutes = ['', '/about', '/services', '/contact'].map((route) => ({
+  const staticRoutes = ['', '/about', '/services', '/projects', '/contact'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
     changeFrequency: 'monthly',

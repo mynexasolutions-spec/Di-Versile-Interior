@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 
@@ -18,11 +19,14 @@ export default function Footer() {
           {/* Logo & About */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center group">
-              <div className="w-36 h-12 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-                <img
+              <div className="relative w-44 h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                <Image
                   src="/logo.png"
                   alt="Di Versile Interior Logo"
-                  className="w-full h-full object-contain"
+                  fill
+                  sizes="176px"
+                  quality={100}
+                  className="object-contain"
                 />
               </div>
             </Link>
@@ -58,8 +62,8 @@ export default function Footer() {
           <div>
             <h3 className="font-sans text-xs tracking-[0.2em] font-extrabold uppercase text-luxury-gold mb-8">Quick Links</h3>
             <ul className="flex flex-col gap-4 font-medium">
-              {['Home', 'About Us', 'Our Services', 'Contact & Enquiries'].map((name, i) => {
-                const paths = ['/', '/about', '/services', '/contact'];
+              {['Home', 'About Us', 'Our Services', 'Our Projects', 'Contact & Enquiries'].map((name, i) => {
+                const paths = ['/', '/about', '/services', '/projects', '/contact'];
                 return (
                   <li key={i}>
                     <Link

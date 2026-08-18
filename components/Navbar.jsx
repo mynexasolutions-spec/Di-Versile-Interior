@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
@@ -36,6 +37,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -53,10 +55,14 @@ export default function Navbar() {
             {/* Raw Logo */}
             <Link href="/" className="flex items-center group">
               <div className="relative w-36 h-11 sm:w-44 sm:h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-                <img
+                <Image
                   src="/logo.png"
                   alt="Di Versile Interior Logo"
-                  className="w-full h-full object-contain filter drop-shadow-sm transition-all duration-300"
+                  fill
+                  sizes="(max-width: 640px) 144px, 176px"
+                  quality={100}
+                  priority
+                  className="object-contain filter drop-shadow-sm transition-all duration-300"
                 />
               </div>
             </Link>
@@ -194,10 +200,13 @@ export default function Navbar() {
               <div className="flex items-center justify-between border-b pb-6 border-luxury-beigeDark">
                 <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                   <div className="relative w-32 h-10 flex items-center justify-center">
-                    <img
+                    <Image
                       src="/logo.png"
                       alt="Di Versile Interior Logo"
-                      className="w-full h-full object-contain"
+                      fill
+                      sizes="128px"
+                      quality={100}
+                      className="object-contain"
                     />
                   </div>
                 </Link>
