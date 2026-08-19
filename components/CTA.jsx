@@ -36,14 +36,14 @@ export default function CTA() {
               {/* Left Column: Text (8 cols) */}
               <div className="lg:col-span-7">
                 <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-4">
-                  Get Started Today
+                  Let's Create Your Space
                 </span>
-                <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight mb-6">
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight mb-6">
                   Ready to Transform Your{' '}
                   <span className="text-gold-gradient block sm:inline">Space?</span>
                 </h2>
                 <p className="text-luxury-charcoalLight font-semibold text-base sm:text-lg leading-relaxed max-w-2xl">
-                  Talk to Di Versile Interior for complete interior, furnishing, flooring, electrical, and painting solutions. We offer expert site consultations across[State_name].
+                  Whether you're building a new home, renovating an existing space, opening a café, or setting up an office — tell us about your project. Di Versile Interior offers expert design consultations across Goa, from concept to completion.
                 </p>
               </div>
 
@@ -73,7 +73,14 @@ export default function CTA() {
                   href="/contact"
                   className="group flex items-center justify-center gap-2 text-luxury-charcoalLight hover:text-luxury-gold text-xs font-bold uppercase tracking-widest transition-colors duration-300 pt-2"
                 >
-                  Fill out our enquiry form
+                  Request a Consultation
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/projects"
+                  className="group flex items-center justify-center gap-2 text-luxury-charcoalLight hover:text-luxury-gold text-xs font-bold uppercase tracking-widest transition-colors duration-300"
+                >
+                  View Our Projects
                   <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

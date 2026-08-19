@@ -10,23 +10,23 @@ const slides = [
   {
     id: 1,
     image: '/images/Hero/hero1.png',
-    headline1: 'Your Dream Space,',
-    headline2: 'Crafted.',
-    sub: 'Complete interior & exterior work — ply & wooden furniture, flooring, false ceilings, electrical, putty & painting, and more, all under one roof. Trusted by hundreds of[State_name]n homes.',
+    headline1: 'Creating Spaces That',
+    headline2: 'Feel Like You.',
+    sub: 'Interior & exterior design with turnkey execution, from concept to completion. A father-daughter led studio bringing thoughtful design and detailed execution to every space.',
   },
   {
     id: 2,
     image: '/images/Hero/hero2.png',
-    headline1: 'Stunning Interior Designs,',
-    headline2: 'Delivered.',
-    sub: 'From ply & wooden furniture and flooring to false ceilings, electrical work, and painting — plus toughened glass, fabrication, and ACP cladding for exteriors.',
+    headline1: 'Thoughtful Design,',
+    headline2: 'Detailed Execution.',
+    sub: 'From space planning and 3D visualisation to false ceilings, custom furniture, wall treatments and flooring — we design and execute every layer of your space under one roof.',
   },
   {
     id: 3,
     image: '/images/Hero/hero3.png',
-    headline1: 'Premium Home Furnishings,',
-    headline2: 'Perfected.',
-    sub: 'Discover premium interior & exterior solutions — from elegant flooring and wooden furniture to decorative walls, ceilings, and professional painting.',
+    headline1: 'From an Empty Shell to',
+    headline2: 'a Complete Space.',
+    sub: 'Ceilings, walls, floors, furniture, lighting, façades and cladding — we bring every layer together into one seamless transformation, indoors and out.',
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 self-start mb-4">
             <MapPin size={11} className="text-luxury-gold shrink-0" />
             <span className="text-[10px] font-extrabold tracking-wider text-white uppercase">
-              [city_name],[State_name] <span className="text-luxury-gold font-black">•</span> Interior Solutions &amp; Furnishing
+              Delhi <span className="text-luxury-gold font-black">•</span> Interior &amp; Exterior Design
             </span>
           </div>
 
@@ -98,7 +98,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.5 }}
-              className="font-sans text-[26px] font-extrabold text-white leading-[1.15] tracking-tight mb-4 drop-shadow-md"
+              className="font-serif text-[26px] font-extrabold text-white leading-[1.15] tracking-tight mb-4 drop-shadow-md"
             >
               {slide.headline1}
               <br />
@@ -109,17 +109,17 @@ export default function Hero() {
           {/* Buttons — side by side */}
           <div className="flex items-center gap-3 mb-5">
             <Link
-              href="/services"
+              href="/projects"
               className="group flex items-center justify-center gap-1.5 px-5 h-10 gold-gradient text-luxury-charcoalDark font-extrabold rounded-xl text-[10px] uppercase tracking-widest shadow-md flex-1"
             >
-              Services
+              Our Work
               <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/contact"
               className="flex items-center justify-center px-5 h-10 bg-white/10 text-white font-bold rounded-xl text-[10px] uppercase tracking-widest border border-white/25 flex-1"
             >
-              Get Quote
+              Start a Project
             </Link>
           </div>
 
@@ -211,9 +211,9 @@ export default function Hero() {
             >
               <MapPin size={14} className="text-luxury-gold shrink-0" />
               <span className="text-xs font-extrabold tracking-widest text-white uppercase flex items-center gap-1.5">
-                [city_name],[State_name]
+                Delhi
                 <span className="text-luxury-gold/60">•</span>
-                <span className="text-white/80 font-semibold">Interior Solutions &amp; Home Furnishing</span>
+                <span className="text-white/80 font-semibold">Interior &amp; Exterior Design Studio</span>
               </span>
             </motion.div>
 
@@ -226,7 +226,7 @@ export default function Hero() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-5 drop-shadow-md">
+                <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-5 drop-shadow-md">
                   {slide.headline1}
                   <br />
                   <span className="text-gold-gradient">{slide.headline2}</span>
@@ -245,17 +245,17 @@ export default function Hero() {
               className="flex items-center gap-4 mb-12"
             >
               <Link
-                href="/services"
+                href="/projects"
                 className="group flex items-center justify-center gap-2.5 px-8 h-14 gold-gradient text-luxury-charcoalDark font-extrabold rounded-2xl text-sm uppercase tracking-widest shadow-lg shadow-luxury-gold/20 hover:shadow-luxury-gold/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
               >
-                Explore Services
+                Explore Our Work
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 href="/contact"
                 className="flex items-center justify-center px-8 h-14 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl text-sm uppercase tracking-widest border border-white/25 backdrop-blur-md hover:border-white/50 transition-all duration-300"
               >
-                Get Free Quote
+                Start Your Project
               </Link>
             </motion.div>
 
@@ -315,9 +315,9 @@ export default function Hero() {
           className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/40 backdrop-blur-md px-4 py-3 flex items-center justify-center gap-10"
         >
           {[
-            { icon: ShieldCheck, text: 'Premium Quality' },
-            { icon: Award, text: 'Expert Installation' },
-            { icon: Star, text: '5-Star Rated Service' },
+            { icon: ShieldCheck, text: 'Design & Execution, One Roof' },
+            { icon: Award, text: 'Family Led Studio' },
+            { icon: Star, text: 'Bespoke, Not Catalogue' },
           ].map(({ icon: Icon, text }, i) => (
             <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-semibold">
               <Icon size={14} className="text-luxury-gold shrink-0" />

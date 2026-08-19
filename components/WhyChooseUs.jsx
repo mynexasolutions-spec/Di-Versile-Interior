@@ -6,34 +6,34 @@ import { Home, ShieldCheck, UserCheck, Settings, Heart, Award } from 'lucide-rea
 export default function WhyChooseUs() {
   const cards = [
     {
+      icon: Heart,
+      title: 'Father-Daughter Partnership',
+      description: 'A combination of experience, creativity and a personal approach to every project — for us, every project is personal.',
+    },
+    {
       icon: Home,
-      title: 'Complete Interior Solutions',
-      description: 'Find multiple home furnishing, decor, electrical, and painting services all managed under one roof.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Quality Products',
-      description: 'We work closely with India’s most trusted home-furnishing brands to bring you elite, certified materials.',
-    },
-    {
-      icon: UserCheck,
-      title: 'Professional Service',
-      description: 'Our experienced staff focuses entirely on understanding your expectations, offering bespoke design advice.',
+      title: 'Design & Execution Under One Roof',
+      description: 'From the first concept to the final installation, we manage the complete design and execution process — no need to coordinate multiple vendors.',
     },
     {
       icon: Settings,
-      title: 'Customized Solutions',
-      description: 'Every layout, curtain drape, and panel layout is custom crafted to your floor plans, visual taste, and budgets.',
+      title: 'Bespoke Solutions',
+      description: "We don't believe in one-size-fits-all interiors. Every project is developed around its own requirements, not copied from a catalogue.",
     },
     {
-      icon: Heart,
-      title: 'One Trusted Partner',
-      description: 'Simplify your project coordination. From floors to false ceilings, handle everything through our single dedicated team.',
+      icon: ShieldCheck,
+      title: 'Practical Design',
+      description: 'Our designs consider real-world construction, usability, maintenance and budget — not just aesthetics.',
     },
     {
       icon: Award,
-      title: 'Expert Execution',
-      description: 'Our skilled craftsmen ensure flawless installation and finishing on site, delivering premium results every single time.',
+      title: 'Attention to Detail',
+      description: 'From large architectural elements to the smallest finishing detail, we believe quality lies in the execution.',
+    },
+    {
+      icon: UserCheck,
+      title: 'One Point of Coordination',
+      description: 'Our integrated approach reduces the need for clients to coordinate multiple independent vendors on their own.',
     },
   ];
 
@@ -50,12 +50,12 @@ export default function WhyChooseUs() {
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
             Why Di Versile Interior
           </span>
-          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
-            Designed for <span className="text-gold-gradient">Trust</span> &amp; Quality
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
+            A Design Studio With a <span className="text-gold-gradient">Hands-On</span> Approach
           </h2>
           <div className="w-20 h-[2.5px] gold-gradient mx-auto my-6 rounded-full" />
           <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-            We combine premium design craftsmanship with seamless execution, making us[State_name]’s preferred interior and furnishing provider.
+            We combine premium design craftsmanship with seamless execution, making us Goa's preferred interior &amp; exterior design studio.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
 
                 {/* Content */}
                 <div className="flex flex-col gap-2 relative z-10">
-                  <h3 className="font-sans text-xl font-extrabold tracking-tight text-luxury-charcoal transition-colors duration-300 group-hover:text-luxury-gold">
+                  <h3 className="font-serif text-xl font-extrabold tracking-tight text-luxury-charcoal transition-colors duration-300 group-hover:text-luxury-gold">
                     {card.title}
                   </h3>
                   <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">

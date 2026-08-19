@@ -24,8 +24,11 @@ module.exports = {
         }
       },
       fontFamily: {
+        // Both driven by the CSS variables set in app/fonts.css —
+        // swap fonts there and every `font-sans` / `font-serif` class
+        // across the site updates automatically.
         sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
-        serif: ['var(--font-sans)', 'Inter', 'sans-serif'],
+        serif: ['var(--font-serif)', 'var(--font-sans)', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',

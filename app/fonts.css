@@ -1,0 +1,90 @@
+/* ============================================================
+   SITE FONT CONFIGURATION — Di Versile Interior
+   ------------------------------------------------------------
+   This is the ONE file that controls the typeface used across
+   the entire website. Two CSS variables drive everything:
+
+   --font-serif → the HEADING font (h1/h2/h3 page titles, section
+                  titles, card titles — everywhere `font-serif` is
+                  used in the components).
+   --font-sans  → the BODY / UI font (paragraphs, nav, buttons,
+                  labels, form fields — everywhere `font-sans` is
+                  used, which is most of the site).
+
+   HOW TO CHANGE THE FONT:
+   1. Pick a combo below (or bring your own from
+      https://fonts.google.com — pair one "Display/Serif" style
+      for headings with one clean grotesque/sans for body text).
+   2. Comment out the "ACTIVE COMBO" block currently in use.
+   3. Uncomment the combo you want to try.
+   4. Save — every `font-serif` / `font-sans` class across the
+      site (Tailwind utilities, wired up in tailwind.config.js)
+      picks this up automatically. No other file needs to change.
+   ============================================================ */
+
+/* ---------- ACTIVE COMBO 1: Cormorant Garamond + Montserrat ---------- */
+/* Elegant, editorial serif headlines over a clean geometric sans body —
+   classic luxury-interiors pairing. */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+} */
+
+/* ============================================================
+   YOUR 3 REQUESTED COMBOS — uncomment ONE block (both the
+   @import and the :root variables) and re-comment the active
+   block above.
+   ============================================================ */
+
+/* --- Combo 2: Bodoni Moda + Montserrat ---
+   High-contrast, fashion-editorial serif headlines with the same
+   clean Montserrat body — bolder and more dramatic than Cormorant.
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&display=swap');
+:root {
+  --font-serif: 'Bodoni Moda', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+*/
+
+/* --- Combo 3: Playfair Display + Manrope ---
+   Timeless display-serif headlines with a modern, slightly rounded
+   sans body — softer and more contemporary than Combo 1/2.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+
+/* ============================================================
+   MORE OPTIONS — single-family combos (same font for headings
+   and body), in case you'd rather not mix two typefaces.
+   ============================================================ */
+
+/* --- Poppins only (clean, modern geometric sans) ---
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root {
+  --font-serif: 'Poppins', 'Inter', system-ui, sans-serif;
+  --font-sans: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+}
+*/
+
+/* --- Inter only (original default, neutral & highly legible) ---
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+:root {
+  --font-serif: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+*/
+
+/* --- Outfit only (contemporary, geometric, popular in design-studio sites) ---
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+:root {
+  --font-serif: 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+*/

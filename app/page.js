@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import ServicesPreview from '@/components/ServicesPreview';
+import Spaces from '@/components/Spaces';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Brands from '@/components/Brands';
 import Gallery from '@/components/Gallery';
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <ServicesPreview />
+      <Spaces />
       <WhyChooseUs />
       <Brands />
       <Gallery />

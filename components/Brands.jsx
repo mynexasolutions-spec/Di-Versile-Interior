@@ -50,7 +50,7 @@ export default function Brands() {
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
             Our Associates
           </span>
-          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
             Our Trusted <span className="text-gold-gradient">Brands</span>
           </h2>
           <div className="w-20 h-[2.5px] gold-gradient mx-auto my-4 rounded-full" />

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Check, Info, Shield, Compass, Star } from 'lucide-react';
+import { Check, Info, Shield, Compass, Star, Target, Fingerprint, Layers, Focus, Infinity as InfinityIcon } from 'lucide-react';
 import CTA from '@/components/CTA';
 
 export default function About() {
@@ -20,6 +20,24 @@ export default function About() {
     'Outside Painting',
   ];
 
+  const processSteps = [
+    { number: '01', title: 'Understanding', description: 'We begin by understanding your requirements, lifestyle, business, preferences, budget and vision.' },
+    { number: '02', title: 'Concept', description: 'We develop the overall design direction through layouts, mood boards, materials, colours and visual references.' },
+    { number: '03', title: 'Visualisation', description: 'Our 3D visualisations let you experience the proposed space before execution begins.' },
+    { number: '04', title: 'Planning', description: 'Detailed drawings, material specifications and execution planning translate the design into reality.' },
+    { number: '05', title: 'Execution', description: 'Our team coordinates the required trades, materials and site work while maintaining the design intent.' },
+    { number: '06', title: 'Finishing', description: 'The final stage focuses on detailing, furniture, lighting, décor and finishing touches that bring the space together.' },
+    { number: '07', title: 'Handover', description: 'Once the work is completed, we ensure the finished space reflects the approved design and meets the required standards.' },
+  ];
+
+  const philosophyPillars = [
+    { icon: Target, title: 'Functionality', description: 'Every space should work as beautifully as it looks.' },
+    { icon: Fingerprint, title: 'Individuality', description: 'Your space should feel personal rather than copied from a catalogue.' },
+    { icon: Layers, title: 'Materiality', description: 'We carefully combine textures, colours, finishes and materials to create depth and character.' },
+    { icon: Focus, title: 'Attention to Detail', description: 'From large architectural elements to the smallest finishing detail, we believe quality lies in the execution.' },
+    { icon: InfinityIcon, title: 'Timelessness', description: 'We aim to create spaces that remain beautiful and relevant long after the latest trend has passed.' },
+  ];
+
   return (
     <>
       <section className="bg-gradient-to-b from-white via-luxury-beige/30 to-white pt-28 pb-24 border-b border-luxury-beigeDark/30 relative overflow-hidden text-luxury-charcoal">
@@ -33,14 +51,14 @@ export default function About() {
           {/* Header Area */}
           <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
             <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
-              Get to Know Us
+              A Family-Built Design Practice
             </span>
-            <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
               About <span className="text-gold-gradient">Di Versile Interior</span>
             </h1>
             <div className="w-20 h-[3px] gold-gradient mx-auto my-6 rounded-full" />
             <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-              Providing complete interior solutions, home furnishings, sales, and service with a singular focus on premium quality, customer needs, and exceptional craftsmanship in [city_name],[State_name].
+              A family-led interior &amp; exterior design studio founded by a father-daughter team, providing complete design and execution — from concept to completion — for homes, businesses, hospitality and educational spaces across Goa.
             </p>
           </div>
 
@@ -59,9 +77,9 @@ export default function About() {
                   <Info size={20} className="stroke-[2.5]" />
                 </div>
                 <div className="flex-grow z-10">
-                  <h2 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Who We Are</h2>
+                  <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Who We Are</h2>
                   <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
-                    Di Versile Interior is a dedicated partner for premium home improvement and interior solutions. Located in [city_name], we cater to[State_name]n homes and offices, delivering high-end materials combined with expert end-to-end services.
+                    Di Versile Interior is a family-led interior and exterior design studio founded by a father-daughter team with a shared passion for creating beautiful, functional spaces. For us, every project is personal — we don't just design spaces, we build spaces that become part of people's lives.
                   </p>
                 </div>
               </div>
@@ -75,7 +93,7 @@ export default function About() {
                   <Shield size={20} className="stroke-[2.5]" />
                 </div>
                 <div className="flex-grow z-10">
-                  <h2 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">What We Do</h2>
+                  <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">What We Do</h2>
                   <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
                     We cover everything your space requires. From ply &amp; wooden furniture, flooring, and false ceilings to electrical wiring, putty &amp; painting, and wall decorative finishes indoors — plus toughened glass, fabrication, ACP cladding, box grill, and outside painting for exteriors.
                   </p>
@@ -91,9 +109,9 @@ export default function About() {
                   <Compass size={20} className="stroke-[2.5]" />
                 </div>
                 <div className="flex-grow z-10">
-                  <h2 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Our Approach</h2>
+                  <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Our Approach</h2>
                   <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
-                    We listen first. Every home or commercial establishment has unique dimensions and lightings. We guide you in selecting the right textiles, flooring structures, and ambient lighting, ensuring a customized result that matches your vision.
+                    Our approach combines creative design thinking with practical knowledge of materials, construction and execution. We work closely with our clients throughout the journey — understanding their requirements, developing the design and coordinating the transformation of the space.
                   </p>
                 </div>
               </div>
@@ -126,11 +144,11 @@ export default function About() {
               <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
                 Our Capabilities
               </span>
-              <h2 className="font-sans text-3xl font-extrabold tracking-tight text-luxury-charcoal">
+              <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
                 Core Service Segments
               </h2>
               <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
-                We handle domestic, hospitality, and workspace renovation jobs under our single brand.
+                We design for every kind of space — residential, commercial, hospitality and educational — with design and execution under one roof.
               </p>
             </div>
 
@@ -151,6 +169,85 @@ export default function About() {
             </div>
           </div>
 
+          {/* Our Process */}
+          <div className="mt-28 pt-20 border-t border-luxury-beigeDark/50">
+            <div className="max-w-xl mb-12">
+              <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
+                From Idea to Reality
+              </span>
+              <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
+                Our Process
+              </h2>
+              <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
+                We coordinate every stage of the project to create a smoother, more streamlined experience for our clients.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.06 }}
+                  className="group relative p-6 rounded-2xl bg-white border border-luxury-beigeDark/50 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_15px_35px_rgba(212,175,55,0.1)] transition-all duration-500"
+                >
+                  <span className="font-sans text-3xl font-extrabold text-luxury-gold/25 group-hover:text-luxury-gold/50 transition-colors duration-500">
+                    {step.number}
+                  </span>
+                  <h3 className="font-serif text-base font-extrabold tracking-tight text-luxury-charcoal mt-2 mb-2 group-hover:text-luxury-gold transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Our Design Philosophy */}
+          <div className="mt-28 pt-20 border-t border-luxury-beigeDark/50">
+            <div className="max-w-xl mb-12">
+              <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
+                Thoughtful Design. Detailed Execution.
+              </span>
+              <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
+                Our Design Philosophy
+              </h2>
+              <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
+                We believe the best spaces are created by understanding the people, purpose and personality behind them — not by following trends blindly.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {philosophyPillars.map((pillar, index) => {
+                const Icon = pillar.icon;
+                return (
+                  <motion.div
+                    key={pillar.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    className="group flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-white border border-luxury-beigeDark/50 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_15px_35px_rgba(212,175,55,0.1)] transition-all duration-500"
+                  >
+                    <div className="w-11 h-11 rounded-xl bg-luxury-gold/10 text-luxury-gold flex items-center justify-center shrink-0 transition-all duration-500 group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:rotate-6">
+                      <Icon size={20} className="stroke-[2]" />
+                    </div>
+                    <h3 className="font-serif text-sm font-extrabold tracking-tight text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-300">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-luxury-charcoalLight font-semibold text-xs leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Why Customers Trust Us Card */}
           <div className="mt-24 p-8 sm:p-12 rounded-3xl bg-white border border-luxury-beigeDark/65 hover:border-luxury-gold/40 shadow-[0_20px_50px_rgba(212,175,55,0.1)] flex flex-col md:flex-row gap-8 items-start relative overflow-hidden group transition-all duration-500 scale-100 hover:scale-[1.01]">
             <div className="absolute top-0 left-0 right-0 h-[3.5px] gold-gradient scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
@@ -158,7 +255,7 @@ export default function About() {
               <Star size={26} fill="currentColor" className="stroke-[2]" />
             </div>
             <div className="flex-grow">
-              <h3 className="font-sans text-xl font-extrabold tracking-tight text-luxury-charcoal mb-3 transition-colors duration-300 group-hover:text-luxury-gold">
+              <h3 className="font-serif text-xl font-extrabold tracking-tight text-luxury-charcoal mb-3 transition-colors duration-300 group-hover:text-luxury-gold">
                 Why Customers Trust Di Versile Interior
               </h3>
               <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-5">

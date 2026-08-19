@@ -135,7 +135,7 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext, onSelectIndex }
             <span className="text-[10px] font-bold tracking-widest uppercase text-luxury-gold block mb-0.5">
               {item.category}
             </span>
-            <h3 className="font-sans text-base sm:text-lg font-extrabold text-white tracking-tight">
+            <h3 className="font-serif text-base sm:text-lg font-extrabold text-white tracking-tight">
               {item.title}
             </h3>
           </div>
@@ -197,7 +197,7 @@ function GalleryItem({ item, index, onOpen }) {
         <span className="text-[10px] font-bold tracking-widest uppercase text-luxury-gold mb-1">
           {item.category}
         </span>
-        <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight leading-tight">
+        <h3 className="font-serif text-base sm:text-lg font-extrabold tracking-tight leading-tight">
           {item.title}
         </h3>
         <div className="w-8 h-[2px] bg-luxury-gold mt-2.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-400 rounded-full" />
@@ -234,7 +234,7 @@ export default function Gallery() {
               <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
                 Our Portfolio
               </span>
-              <h2 className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
                 Ideas That Inspire <span className="text-gold-gradient">Better Spaces</span>
               </h2>
               <div className="w-20 h-[2.5px] bg-luxury-gold mt-4 rounded-full" />

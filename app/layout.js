@@ -1,19 +1,16 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingButtons from '@/components/FloatingButtons'
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-})
+// Font is loaded via app/fonts.css (imported inside globals.css) so the
+// whole site's typeface can be swapped from a single CSS file — see the
+// comments in app/fonts.css for ready-to-use font combos.
 
 export const metadata = {
-  title: 'Di Versile Interior | Interior & Exterior Work Solutions in[State_name]',
-  description: 'Di Versile Interior provides complete interior & exterior work including ply & wooden furniture, flooring, false ceiling, electrical, putty & painting, wall decorative, toughened glass, fabrication, ACP cladding, box grill and outside painting in [city_name],[State_name].',
-  keywords: 'Di Versile Interior[State_name], Interior solutions in[State_name], Exterior work in[State_name], Interior services in [city_name], Home improvement services[State_name], Ply Wooden Furniture, Flooring, False Ceiling, Electrical Work, Putty Painting, Wall Decorative, Toughened Glass, Fabrication, ACP Cladding, Box Grill, Outside Painting,[State_name], [city_name]',
+  title: 'Di Versile Interior | Interior & Exterior Design Studio in Goa',
+  description: 'Di Versile Interior is a family-led interior & exterior design studio in Delhi offering complete design and execution — space planning, false ceilings, custom furniture, flooring, wall treatments, ACP cladding, fabrication and outside painting — for residential, commercial, hospitality and educational spaces.',
+  keywords: 'Di Versile Interior Goa, Interior design Goa, Exterior design Goa, Interior designer Goa, Turnkey interior solutions Goa, Home renovation Goa, Ply Wooden Furniture, Flooring, False Ceiling, Electrical Work, Putty Painting, Wall Decorative, Toughened Glass, Fabrication, ACP Cladding, Box Grill, Outside Painting, Residential Interior Design, Commercial Interior Design, Hospitality Design',
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
@@ -28,8 +25,8 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Di Versile Interior | Interior & Exterior Work Solutions in[State_name]',
-    description: 'Di Versile Interior provides complete interior & exterior work including ply & wooden furniture, flooring, false ceiling, electrical, putty & painting, wall decorative, toughened glass, fabrication, ACP cladding, box grill and outside painting in [city_name],[State_name].',
+    title: 'Di Versile Interior | Interior & Exterior Design Studio in Goa',
+    description: 'A family-led interior & exterior design studio in Delhi — complete design and execution from concept to completion, for residential, commercial, hospitality and educational spaces.',
     url: 'https://creativedecorgoa.com',
     siteName: 'Di Versile Interior',
     locale: 'en_IN',
@@ -88,7 +85,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth overflow-x-hidden`}>
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <head>
         <script
           type="application/ld+json"

@@ -117,7 +117,7 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext, onSelectIndex }
             <span className="text-[10px] font-bold tracking-widest uppercase text-luxury-gold block mb-0.5">
               {item.type === 'video' ? 'Video' : 'Photo'}
             </span>
-            <h3 className="font-sans text-base sm:text-lg font-extrabold text-white tracking-tight">
+            <h3 className="font-serif text-base sm:text-lg font-extrabold text-white tracking-tight">
               {item.name}
             </h3>
           </div>
@@ -203,7 +203,7 @@ function ProjectCard({ item, index, onOpen }) {
       )}
 
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white flex items-end justify-between gap-3 z-10">
-        <h3 className="font-sans text-sm sm:text-base font-extrabold tracking-tight leading-tight">
+        <h3 className="font-serif text-sm sm:text-base font-extrabold tracking-tight leading-tight">
           {item.name}
         </h3>
         <span className="shrink-0 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -260,7 +260,7 @@ export default function ProjectsGallery({ images, videos }) {
             <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3 animate-fade-in">
               Our Work
             </span>
-            <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
               Sites &amp; <span className="text-gold-gradient">Projects</span>
             </h1>
             <div className="w-20 h-[2.5px] bg-luxury-gold mx-auto my-6 rounded-full" />
@@ -303,7 +303,7 @@ export default function ProjectsGallery({ images, videos }) {
                   <ImageIcon className="text-luxury-gold" size={26} />
                 )}
               </div>
-              <h3 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-3">
+              <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-3">
                 No {filter === 'videos' ? 'videos' : filter === 'photos' ? 'photos' : 'projects'} yet
               </h3>
               <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">

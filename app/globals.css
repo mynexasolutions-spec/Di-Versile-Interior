@@ -1,3 +1,7 @@
+/* Site-wide font configuration lives in ./fonts.css — edit that file to
+   change the typeface used across the whole site (see comments there). */
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

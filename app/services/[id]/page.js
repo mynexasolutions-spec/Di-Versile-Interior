@@ -217,7 +217,7 @@ export default function ServiceDetailPage({ params }) {
                   Premium Catalogue Solution
                 </span>
               </div>
-              <h1 className="font-sans text-3xl sm:text-5xl font-extrabold text-luxury-charcoal tracking-tight leading-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-luxury-charcoal tracking-tight leading-tight">
                 Luxury <span className="text-gold-gradient">{service.name}</span>
               </h1>
               <div className="w-16 h-[3px] gold-gradient mt-2 rounded-full" />
@@ -246,7 +246,7 @@ export default function ServiceDetailPage({ params }) {
             {/* Overview Card */}
             <div className="bg-white p-7 sm:p-9 rounded-3xl border border-luxury-beigeDark/50 shadow-md relative overflow-hidden group">
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <h2 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-4">Overview</h2>
+              <h2 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-4">Overview</h2>
               <p className="text-luxury-charcoalLight font-semibold text-base sm:text-lg leading-relaxed">
                 {service.description} Di Versile Interior brings decades of trusted material expertise directly to your home. We assist you from select material catalogs to customized fitting and lifetime service support, ensuring a smooth interior upgrade experience.
               </p>
@@ -256,7 +256,7 @@ export default function ServiceDetailPage({ params }) {
             {extra.features.length > 0 && (
               <div className="bg-white p-7 sm:p-9 rounded-3xl border border-luxury-beigeDark/50 shadow-md relative overflow-hidden group">
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                <h2 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-6">Key Highlights</h2>
+                <h2 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-6">Key Highlights</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {extra.features.map((feat, index) => (
                     <div key={index} className="flex gap-3.5 items-start">
@@ -275,7 +275,7 @@ export default function ServiceDetailPage({ params }) {
             {/* FAQ Accordion Styling */}
             {extra.faqs.length > 0 && (
               <div className="flex flex-col gap-6">
-                <h2 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-2">Frequently Asked Questions</h2>
+                <h2 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-2">Frequently Asked Questions</h2>
                 <div className="flex flex-col gap-4">
                   {extra.faqs.map((faq, index) => {
                     const isOpen = faqOpen === index;
@@ -331,7 +331,7 @@ export default function ServiceDetailPage({ params }) {
                 <span className="text-[10px] font-bold tracking-widest text-luxury-gold uppercase block mb-1">
                  [State_name] Site Visit
                 </span>
-                <h3 className="font-sans text-xl font-extrabold text-luxury-charcoal">
+                <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal">
                   Book a Consultation
                 </h3>
                 <p className="text-xs font-semibold text-luxury-charcoalLight mt-2">
@@ -430,7 +430,7 @@ export default function ServiceDetailPage({ params }) {
             <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-2">
               Explore More
             </span>
-            <h3 className="font-sans text-2xl sm:text-3xl font-extrabold text-luxury-charcoal">
+            <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-luxury-charcoal">
               Related Home Solutions
             </h3>
           </div>
@@ -447,7 +447,7 @@ export default function ServiceDetailPage({ params }) {
                     <RelIcon size={20} />
                   </div>
                   <div className="flex flex-col flex-grow">
-                    <h4 className="font-sans text-base sm:text-lg font-extrabold text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-300">
+                    <h4 className="font-serif text-base sm:text-lg font-extrabold text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-300">
                       {rel.name}
                     </h4>
                     <p className="text-xs sm:text-sm font-semibold text-luxury-charcoalLight mt-1.5 leading-relaxed line-clamp-2">

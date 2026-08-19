@@ -55,7 +55,7 @@ function DetailedServiceCard({ service, index }) {
         <div className="absolute -top-7 right-6 w-14 h-14 rounded-full gold-gradient text-luxury-charcoalDark flex items-center justify-center shadow-lg border-4 border-white z-10 transition-all duration-500 group-hover:rotate-12 group-hover:scale-105 group-hover:shadow-luxury-gold/25">
           <IconComponent size={20} />
         </div>
-        <h3 className="font-sans text-xl font-extrabold tracking-tight text-luxury-charcoal mb-3 transition-colors duration-300 group-hover:text-luxury-gold">
+        <h3 className="font-serif text-xl font-extrabold tracking-tight text-luxury-charcoal mb-3 transition-colors duration-300 group-hover:text-luxury-gold">
           {service.name}
         </h3>
         <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-6 flex-grow">
@@ -100,12 +100,12 @@ export default function Services() {
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3 animate-fade-in">
             Service We Provide
           </span>
-          <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
+          <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
             Our <span className="text-gold-gradient">Services</span>
           </h1>
           <div className="w-20 h-[2.5px] bg-luxury-gold mx-auto my-6 rounded-full" />
           <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-            Di Versile Interior offers complete, full interior &amp; exterior work designed for modern spaces. Indoors, we handle ply &amp; wooden furniture, flooring, false ceiling, electrical work, putty &amp; painting, and wall decorative finishes. Outdoors, we cover toughened glass, fabrication, ACP cladding, box grill, and outside painting, all delivered in[State_name].
+            We create cohesive interiors that balance aesthetics, functionality and individuality, and exteriors that make a strong first impression. Indoors, we handle ply &amp; wooden furniture, flooring, false ceiling, electrical work, putty &amp; painting, and wall decorative finishes. Outdoors, we cover toughened glass, fabrication, ACP cladding, box grill, and outside painting — all delivered across Goa.
           </p>
         </div>
 

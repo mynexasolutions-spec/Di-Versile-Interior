@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed font-medium">
-              Complete Interior &amp; Exterior Solutions, Sales and Service. Transform your space with our ply &amp; wooden furniture, flooring, electrical, putty &amp; painting, and exterior fabrication services in[State_name].
+              A family-led interior &amp; exterior design studio in Goa. From concept to completion — ply &amp; wooden furniture, flooring, electrical, putty &amp; painting, and exterior fabrication, all under one roof.
             </p>
             {/* Contact Buttons (WhatsApp & Mail) */}
             <div className="flex items-center gap-3 mt-2">
@@ -138,7 +138,7 @@ export default function Footer() {
           <p className="text-center sm:text-left">© {currentYear} Di Versile Interior. All Rights Reserved.</p>
           <div className="flex gap-2 items-center">
             <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
-            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">[city_name],[State_name]</span>
+            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">Goa, India</span>
           </div>
         </div>
       </div>

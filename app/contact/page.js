@@ -58,7 +58,7 @@ export default function Contact() {
           <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
             Get in Touch
           </span>
-          <h1 className="font-sans text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
             Let's Create a Better Space <span className="text-gold-gradient">Together</span>
           </h1>
           <div className="w-20 h-[3px] gold-gradient mx-auto my-6 rounded-full" />
@@ -82,7 +82,7 @@ export default function Contact() {
                 <Phone size={20} className="stroke-[2.5]" />
               </div>
               <div className="flex-grow z-10">
-                <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Call Us</h3>
+                <h3 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Call Us</h3>
                 <div className="flex flex-col gap-1.5">
                   <a href="tel:8240602352" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold">
                     8240602352
@@ -101,7 +101,7 @@ export default function Contact() {
                 <Mail size={20} className="stroke-[2.5]" />
               </div>
               <div className="flex-grow z-10">
-                <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Email Address</h3>
+                <h3 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Email Address</h3>
                 <a href="mailto:diversileinterior@gmail.com" className="text-sm sm:text-base text-luxury-charcoalLight hover:text-luxury-gold transition-colors font-semibold break-all">
                   diversileinterior@gmail.com
                 </a>
@@ -117,7 +117,7 @@ export default function Contact() {
                 <MapPin size={20} className="stroke-[2.5]" />
               </div>
               <div className="flex-grow z-10">
-                <h3 className="font-sans text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Visit Our Store</h3>
+                <h3 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Visit Our Store</h3>
                 <p className="text-sm sm:text-base text-luxury-charcoalLight leading-relaxed font-semibold">
                  Sample
                 </p>

@@ -52,7 +52,7 @@ function ServiceCard({ service, index }) {
           <IconComponent size={22} />
         </div>
 
-        <h3 className="font-sans text-xl font-extrabold text-luxury-charcoal mb-3 pr-10">
+        <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-3 pr-10">
           {service.name}
         </h3>
 
@@ -100,7 +100,7 @@ export default function ServicesPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal"
           >
             Everything Your <span className="text-gold-gradient">Space</span> Needs
           </motion.h2>
@@ -112,7 +112,7 @@ export default function ServicesPreview() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed"
           >
-            From ply &amp; wooden furniture, flooring, and false ceiling to electrical work, putty &amp; painting, and wall decorative finishes, we provide complete interior &amp; exterior work under one roof in[State_name].
+            We create cohesive interiors that balance aesthetics, functionality and individuality — from ply &amp; wooden furniture, flooring, and false ceilings to electrical work, putty &amp; painting, and wall decorative finishes. Complete interior &amp; exterior work, under one roof, across Goa.
           </motion.p>
         </div>
 
