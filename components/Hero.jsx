@@ -57,7 +57,7 @@ export default function Hero() {
   return (
     <>
       {/* ── MOBILE HERO (below sm) ── */}
-      <div className="sm:hidden relative mt-14 bg-luxury-charcoal overflow-hidden">
+      <div className="sm:hidden relative bg-luxury-charcoal overflow-hidden pt-14">
         {/* Background */}
         <AnimatePresence mode="sync">
           <motion.div
@@ -73,7 +73,7 @@ export default function Hero() {
               alt={slide.headline1}
               fill
               priority
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 self-start mb-4">
             <MapPin size={11} className="text-luxury-gold shrink-0" />
             <span className="text-[10px] font-extrabold tracking-wider text-white uppercase">
-              Delhi <span className="text-luxury-gold font-black">•</span> Interior &amp; Exterior Design
+              Kolkata <span className="text-luxury-gold font-black">•</span> Interior &amp; Exterior Design
             </span>
           </div>
 
@@ -170,7 +170,7 @@ export default function Hero() {
 
       {/* ── DESKTOP HERO (sm and above) ── */}
       <section
-        className="hidden sm:flex relative h-screen min-h-[680px] items-end pb-20 overflow-hidden bg-luxury-charcoal"
+        className="hidden sm:flex relative h-screen min-h-[680px] items-center pt-32 pb-16 overflow-hidden bg-luxury-charcoal"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -189,7 +189,7 @@ export default function Hero() {
               alt={slide.headline1}
               fill
               priority
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
@@ -211,7 +211,7 @@ export default function Hero() {
             >
               <MapPin size={14} className="text-luxury-gold shrink-0" />
               <span className="text-xs font-extrabold tracking-widest text-white uppercase flex items-center gap-1.5">
-                Delhi
+                Kolkata
                 <span className="text-luxury-gold/60">•</span>
                 <span className="text-white/80 font-semibold">Interior &amp; Exterior Design Studio</span>
               </span>
@@ -264,7 +264,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              className="grid grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10"
             >
               {[
                 { value: '500+', label: 'Projects Done' },
@@ -307,25 +307,22 @@ export default function Hero() {
           </div>
         )}
 
-        {/* Trust strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/40 backdrop-blur-md px-4 py-3 flex items-center justify-center gap-10"
-        >
-          {[
-            { icon: ShieldCheck, text: 'Design & Execution, One Roof' },
-            { icon: Award, text: 'Family Led Studio' },
-            { icon: Star, text: 'Bespoke, Not Catalogue' },
-          ].map(({ icon: Icon, text }, i) => (
-            <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-semibold">
-              <Icon size={14} className="text-luxury-gold shrink-0" />
-              <span>{text}</span>
-            </div>
-          ))}
-        </motion.div>
       </section>
+
+      {/* Trust strip (After Hero - Desktop Only) */}
+      <div className="hidden sm:flex bg-luxury-charcoal border-b border-luxury-gold/20 px-4 py-4 sm:py-5 items-center justify-center gap-5 sm:gap-12 flex-wrap relative z-10 shadow-lg">
+        {[
+          { icon: ShieldCheck, text: 'Design & Execution, One Roof' },
+          { icon: Award, text: 'Family Led Studio' },
+          { icon: Star, text: 'Bespoke, Not Catalogue' },
+        ].map(({ icon: Icon, text }, i) => (
+          <div key={i} className="flex items-center gap-2 text-white/80 text-[11px] sm:text-sm font-semibold tracking-wide">
+            <Icon size={18} className="text-luxury-gold shrink-0" />
+            <span>{text}</span>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
+

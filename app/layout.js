@@ -8,13 +8,13 @@ import FloatingButtons from '@/components/FloatingButtons'
 // comments in app/fonts.css for ready-to-use font combos.
 
 export const metadata = {
-  title: 'Di Versile Interior | Interior & Exterior Design Studio in Goa',
-  description: 'Di Versile Interior is a family-led interior & exterior design studio in Delhi offering complete design and execution — space planning, false ceilings, custom furniture, flooring, wall treatments, ACP cladding, fabrication and outside painting — for residential, commercial, hospitality and educational spaces.',
-  keywords: 'Di Versile Interior Goa, Interior design Goa, Exterior design Goa, Interior designer Goa, Turnkey interior solutions Goa, Home renovation Goa, Ply Wooden Furniture, Flooring, False Ceiling, Electrical Work, Putty Painting, Wall Decorative, Toughened Glass, Fabrication, ACP Cladding, Box Grill, Outside Painting, Residential Interior Design, Commercial Interior Design, Hospitality Design',
+  title: 'Di Versile Interior | Interior & Exterior Design Studio in Kolkata',
+  description: 'Di Versile Interior is a family-led interior & exterior design studio in Kolkata offering complete design and execution — space planning, false ceilings, custom furniture, flooring, wall treatments, ACP cladding, fabrication and outside painting — for residential, commercial, hospitality and educational spaces.',
+  keywords: 'Di Versile Interior Kolkata, Interior design Kolkata, Exterior design Kolkata, Interior designer Kolkata, Turnkey interior solutions Kolkata, Home renovation Kolkata, Ply Wooden Furniture, Flooring, False Ceiling, Electrical Work, Putty Painting, Wall Decorative, Toughened Glass, Fabrication, ACP Cladding, Box Grill, Outside Painting, Residential Interior Design, Commercial Interior Design, Hospitality Design',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/brand-logo.png',
+    shortcut: '/brand-logo.png',
+    apple: '/brand-logo.png',
   },
   authors: [{ name: 'Di Versile Interior' }],
   creator: 'Di Versile Interior',
@@ -25,8 +25,8 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Di Versile Interior | Interior & Exterior Design Studio in Goa',
-    description: 'A family-led interior & exterior design studio in Delhi — complete design and execution from concept to completion, for residential, commercial, hospitality and educational spaces.',
+    title: 'Di Versile Interior | Interior & Exterior Design Studio in Kolkata',
+    description: 'A family-led interior & exterior design studio in Kolkata — complete design and execution from concept to completion, for residential, commercial, hospitality and educational spaces.',
     url: 'https://creativedecorgoa.com',
     siteName: 'Di Versile Interior',
     locale: 'en_IN',
@@ -52,22 +52,22 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Di Versile Interior",
-    "image": "https://creativedecorgoa.com/logo.png",
+    "image": "https://creativedecorgoa.com/brand-logo.png",
     "url": "https://creativedecorgoa.com",
     "telephone": "+918240602352",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Sample",
-      "addressLocality": "[city_name]",
-      "addressRegion": "Goa",
-      "postalCode": "403005",
+      "streetAddress": "11A, Braun Field Row, Mominpur",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "postalCode": "700027",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "15.497555",
-      "longitude": "73.823902"
+      "latitude": "22.5354",
+      "longitude": "88.3298"
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html lang="en" className="scroll-smooth overflow-x-hidden" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"
@@ -104,3 +104,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+

@@ -119,7 +119,7 @@ export default function Contact() {
               <div className="flex-grow z-10">
                 <h3 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Visit Our Store</h3>
                 <p className="text-sm sm:text-base text-luxury-charcoalLight leading-relaxed font-semibold">
-                 Sample
+                 11A, Braun Field Row, Mominpur, Kolkata- 700027
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Contact() {
             {/* Google Map Embed */}
             <div className="relative rounded-3xl overflow-hidden shadow-lg border border-luxury-beigeDark/70 h-[250px] w-full bg-stone-100 group transition-all duration-500 hover:shadow-[0_20px_45px_rgba(212,175,55,0.12)]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.7570697926177!2d73.82390237582522!3d15.497555354415848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m2s0x0%3A0x0!2zMTXCsDI5JzUxLjIiTiA3M8KwNDknMzMuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=22.5354,88.3298&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

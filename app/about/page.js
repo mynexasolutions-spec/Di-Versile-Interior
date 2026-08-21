@@ -2,23 +2,13 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Check, Info, Shield, Compass, Star, Target, Fingerprint, Layers, Focus, Infinity as InfinityIcon } from 'lucide-react';
+import { Check, Info, Shield, Compass, Star, Target, Fingerprint, Layers, Focus, Infinity as InfinityIcon, Home, Building2 } from 'lucide-react';
 import CTA from '@/components/CTA';
+import { services } from '@/data/services';
 
 export default function About() {
-  const serviceCategories = [
-    'Interior Ply & Wooden Furniture',
-    'Flooring (Wooden, PVC, Tile)',
-    'False Ceiling (POP/PUP)',
-    'Electrical Work',
-    'Putty & Painting',
-    'Wall Decorative',
-    'Toughened Glass',
-    'Fabrication',
-    'ACP Cladding',
-    'Box Grill',
-    'Outside Painting',
-  ];
+  const interiorServices = services.filter(s => s.category === 'interior').map(s => s.name);
+  const exteriorServices = services.filter(s => s.category === 'exterior').map(s => s.name);
 
   const processSteps = [
     { number: '01', title: 'Understanding', description: 'We begin by understanding your requirements, lifestyle, business, preferences, budget and vision.' },
@@ -58,7 +48,7 @@ export default function About() {
             </h1>
             <div className="w-20 h-[3px] gold-gradient mx-auto my-6 rounded-full" />
             <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-              A family-led interior &amp; exterior design studio founded by a father-daughter team, providing complete design and execution — from concept to completion — for homes, businesses, hospitality and educational spaces across Goa.
+              A family-led interior &amp; exterior design studio founded by a father-daughter team, providing complete design and execution — from concept to completion — for homes, businesses, hospitality and educational spaces across Kolkata.
             </p>
           </div>
 
@@ -78,7 +68,7 @@ export default function About() {
                 </div>
                 <div className="flex-grow z-10">
                   <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Who We Are</h2>
-                  <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
+                  <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
                     Di Versile Interior is a family-led interior and exterior design studio founded by a father-daughter team with a shared passion for creating beautiful, functional spaces. For us, every project is personal — we don't just design spaces, we build spaces that become part of people's lives.
                   </p>
                 </div>
@@ -94,7 +84,7 @@ export default function About() {
                 </div>
                 <div className="flex-grow z-10">
                   <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">What We Do</h2>
-                  <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
+                  <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
                     We cover everything your space requires. From ply &amp; wooden furniture, flooring, and false ceilings to electrical wiring, putty &amp; painting, and wall decorative finishes indoors — plus toughened glass, fabrication, ACP cladding, box grill, and outside painting for exteriors.
                   </p>
                 </div>
@@ -110,7 +100,7 @@ export default function About() {
                 </div>
                 <div className="flex-grow z-10">
                   <h2 className="font-serif text-base sm:text-lg font-extrabold tracking-tight text-luxury-charcoal mb-2 transition-colors duration-300 group-hover:text-luxury-gold">Our Approach</h2>
-                  <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
+                  <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
                     Our approach combines creative design thinking with practical knowledge of materials, construction and execution. We work closely with our clients throughout the journey — understanding their requirements, developing the design and coordinating the transformation of the space.
                   </p>
                 </div>
@@ -147,25 +137,59 @@ export default function About() {
               <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
                 Core Service Segments
               </h2>
-              <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
+              <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mt-3">
                 We design for every kind of space — residential, commercial, hospitality and educational — with design and execution under one roof.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {serviceCategories.map((category, index) => (
-                <div
-                  key={index}
-                  className="group flex items-center gap-3.5 p-5 rounded-2xl bg-white border border-luxury-beigeDark/50 hover:border-luxury-gold/45 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.08)] transition-all duration-500 scale-100 hover:scale-[1.02] active:scale-[0.99] cursor-default"
-                >
-                  <div className="w-8 h-8 rounded-full bg-luxury-gold/10 text-luxury-gold flex items-center justify-center shrink-0 border border-luxury-gold/20 transition-all duration-500 group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:scale-105">
-                    <Check size={14} strokeWidth={3} />
+            {/* Interior Section */}
+            <div className="mb-14">
+              <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-6 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold shadow-sm">
+                  <Home size={18} />
+                </span>
+                Interior Design
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {interiorServices.map((category, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-3.5 p-5 rounded-2xl bg-white border border-luxury-beigeDark/50 hover:border-luxury-gold/45 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.08)] transition-all duration-500 scale-100 hover:scale-[1.02] active:scale-[0.99] cursor-default"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-luxury-gold/10 text-luxury-gold flex items-center justify-center shrink-0 border border-luxury-gold/20 transition-all duration-500 group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:scale-105">
+                      <Check size={14} strokeWidth={3} />
+                    </div>
+                    <span className="text-sm sm:text-base font-bold text-luxury-charcoalLight group-hover:text-luxury-charcoal transition-colors">
+                      {category}
+                    </span>
                   </div>
-                  <span className="text-sm sm:text-base font-bold text-luxury-charcoalLight group-hover:text-luxury-charcoal transition-colors">
-                    {category}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Exterior Section */}
+            <div>
+              <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-6 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold shadow-sm">
+                  <Building2 size={18} />
+                </span>
+                Exterior Design
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {exteriorServices.map((category, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-3.5 p-5 rounded-2xl bg-white border border-luxury-beigeDark/50 hover:border-luxury-gold/45 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.08)] transition-all duration-500 scale-100 hover:scale-[1.02] active:scale-[0.99] cursor-default"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-luxury-gold/10 text-luxury-gold flex items-center justify-center shrink-0 border border-luxury-gold/20 transition-all duration-500 group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:scale-105">
+                      <Check size={14} strokeWidth={3} />
+                    </div>
+                    <span className="text-sm sm:text-base font-bold text-luxury-charcoalLight group-hover:text-luxury-charcoal transition-colors">
+                      {category}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -178,7 +202,7 @@ export default function About() {
               <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
                 Our Process
               </h2>
-              <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
+              <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mt-3">
                 We coordinate every stage of the project to create a smoother, more streamlined experience for our clients.
               </p>
             </div>
@@ -199,7 +223,7 @@ export default function About() {
                   <h3 className="font-serif text-base font-extrabold tracking-tight text-luxury-charcoal mt-2 mb-2 group-hover:text-luxury-gold transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-luxury-charcoalLight font-semibold text-sm leading-relaxed">
+                  <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -216,7 +240,7 @@ export default function About() {
               <h2 className="font-serif text-3xl font-extrabold tracking-tight text-luxury-charcoal">
                 Our Design Philosophy
               </h2>
-              <p className="text-luxury-charcoalLight font-semibold text-sm mt-2">
+              <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mt-3">
                 We believe the best spaces are created by understanding the people, purpose and personality behind them — not by following trends blindly.
               </p>
             </div>
@@ -236,10 +260,10 @@ export default function About() {
                     <div className="w-11 h-11 rounded-xl bg-luxury-gold/10 text-luxury-gold flex items-center justify-center shrink-0 transition-all duration-500 group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:rotate-6">
                       <Icon size={20} className="stroke-[2]" />
                     </div>
-                    <h3 className="font-serif text-sm font-extrabold tracking-tight text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-300">
+                    <h3 className="font-serif text-base font-extrabold tracking-tight text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-300">
                       {pillar.title}
                     </h3>
-                    <p className="text-luxury-charcoalLight font-semibold text-xs leading-relaxed">
+                    <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
                       {pillar.description}
                     </p>
                   </motion.div>
@@ -259,7 +283,7 @@ export default function About() {
                 Why Customers Trust Di Versile Interior
               </h3>
               <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-5">
-                In interior solutions, reliability and quality of materials make all the difference. We partner directly with premium brands such as D'Decor, Sleepwell, Somfy, and Fabio Furnishings to deliver authentic, warrantied products. Together with our experienced staff who execute electrical and painting work, we guarantee peace of mind.
+                In interior solutions, reliability and quality of materials make all the difference. We partner directly with premium brands such as D'Decor, Sleepwell, Somfy, Fabio Furnishings, Welspun, and Obsessions to deliver authentic, warrantied products. Together with our experienced staff who execute electrical and painting work, we guarantee peace of mind.
               </p>
               <div className="text-xs font-bold text-luxury-gold uppercase tracking-wider">
                 Reliable Consulting • Authenticated Materials • Dedicated Workmanship
@@ -275,3 +299,4 @@ export default function About() {
     </>
   );
 }
+

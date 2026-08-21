@@ -10,7 +10,7 @@ export default function FloatingButtons() {
 
   const whatsappNumber = '918240602352';
   const whatsappMessage = encodeURIComponent(
-    'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
+    'Hi Di Versile Interior, I would like to enquire about your interior and exterior design services.'
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const callUrl = 'tel:+918240602352';

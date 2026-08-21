@@ -229,17 +229,15 @@ export default function Gallery() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-            <div className="max-w-xl">
-              <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
-                Our Portfolio
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
-                Ideas That Inspire <span className="text-gold-gradient">Better Spaces</span>
-              </h2>
-              <div className="w-20 h-[2.5px] bg-luxury-gold mt-4 rounded-full" />
-            </div>
-            <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base md:max-w-md leading-relaxed">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
+              Our Portfolio
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight text-luxury-charcoal leading-tight">
+              Ideas That Inspire <span className="text-gold-gradient">Better Spaces</span>
+            </h2>
+            <div className="w-20 h-[2.5px] bg-luxury-gold mx-auto my-6 rounded-full" />
+            <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
               Click any photo to view it fullscreen. Swipe through our work across interior design, flooring, ceilings, curtains, and more.
             </p>
           </div>

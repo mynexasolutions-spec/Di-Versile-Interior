@@ -9,10 +9,11 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Projects | Di Versile Interior',
   description:
-    'Browse completed interior and exterior projects by Di Versile Interior — real photos and videos from sites across Goa.',
+    'Browse completed interior and exterior projects by Di Versile Interior — real photos and videos from sites across Kolkata.',
 };
 
 export default function ProjectsPage() {
   const { images, videos } = getProjectMedia();
   return <ProjectsGallery images={images} videos={videos} />;
 }
+

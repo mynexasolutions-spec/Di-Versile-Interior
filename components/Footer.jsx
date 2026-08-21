@@ -21,7 +21,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center group">
               <div className="relative w-44 h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <Image
-                  src="/logo.png"
+                  src="/brand-logo.png"
                   alt="Di Versile Interior Logo"
                   fill
                   sizes="176px"
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed font-medium">
-              A family-led interior &amp; exterior design studio in Goa. From concept to completion — ply &amp; wooden furniture, flooring, electrical, putty &amp; painting, and exterior fabrication, all under one roof.
+              A family-led interior &amp; exterior design studio in Kolkata. From concept to completion — ply &amp; wooden furniture, flooring, false ceilings, wall panelling, and exterior fabrication, all under one roof.
             </p>
             {/* Contact Buttons (WhatsApp & Mail) */}
             <div className="flex items-center gap-3 mt-2">
@@ -84,14 +84,14 @@ export default function Footer() {
             <h3 className="font-sans text-xs tracking-[0.2em] font-extrabold uppercase text-luxury-gold mb-8">Featured Services</h3>
             <ul className="grid grid-cols-2 gap-4 font-medium">
               {[
-                { name: 'Ply & Wooden Furniture', link: '/services#ply-wooden-furniture' },
-                { name: 'Flooring', link: '/services#flooring' },
-                { name: 'False Ceiling', link: '/services#false-ceiling' },
-                { name: 'Electrical Work', link: '/services#electrical' },
-                { name: 'Putty & Painting', link: '/services#putty-painting' },
-                { name: 'Wall Decorative', link: '/services#wall-decorative' },
-                { name: 'ACP Cladding', link: '/services#acp-cladding' },
-                { name: 'Fabrication', link: '/services#fabrication' },
+                { name: 'Space Planning', link: '/services#space-planning-layout-design' },
+                { name: 'False Ceiling', link: '/services#false-ceiling-design-execution' },
+                { name: 'Furniture', link: '/services#custom-furniture-design' },
+                { name: 'Wall Treatments', link: '/services#wall-panelling-wall-treatments' },
+                { name: 'Flooring', link: '/services#flooring-selection-installation' },
+                { name: 'Lighting Design', link: '/services#lighting-design' },
+                { name: 'Façade Design', link: '/services#residential-facade-design' },
+                { name: 'Metal Works', link: '/services#ms-metal-works' },
               ].map((serv, index) => (
                 <li key={index}>
                   <Link
@@ -113,7 +113,7 @@ export default function Footer() {
               <li className="flex gap-3 items-start leading-relaxed">
                 <MapPin className="text-luxury-gold shrink-0 mt-1" size={18} />
                 <span>
-                  Sample _address
+                  11A, Braun Field Row, Mominpur, Kolkata- 700027
                 </span>
               </li>
               <li className="flex gap-3 items-center">
@@ -138,10 +138,11 @@ export default function Footer() {
           <p className="text-center sm:text-left">© {currentYear} Di Versile Interior. All Rights Reserved.</p>
           <div className="flex gap-2 items-center">
             <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
-            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">Goa, India</span>
+            <span className="tracking-widest uppercase text-xs text-luxury-gold font-bold">Kolkata, India</span>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

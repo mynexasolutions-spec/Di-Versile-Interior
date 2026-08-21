@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Home, Building2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { services } from '@/data/services';
 
@@ -35,34 +35,37 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
+    { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  const interiorServices = services.filter(s => s.category === 'interior');
+  const exteriorServices = services.filter(s => s.category === 'exterior');
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-white/95 backdrop-blur-xl border-luxury-gold/10 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-luxury-charcoal/95 backdrop-blur-xl border-luxury-gold/20 ${
           isScrolled
             ? 'py-1 sm:py-1.5 shadow-lg shadow-luxury-gold/5'
             : 'py-2 sm:py-3'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Raw Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative w-36 h-11 sm:w-44 sm:h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+              <div className="relative w-48 h-11 sm:w-56 sm:h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                 <Image
-                  src="/logo.png"
+                  src="/brand-logo.png"
                   alt="Di Versile Interior Logo"
                   fill
-                  sizes="(max-width: 640px) 144px, 176px"
+                  sizes="(max-width: 640px) 192px, 224px"
                   quality={100}
                   priority
-                  className="object-contain filter drop-shadow-sm transition-all duration-300"
+                  className="object-contain scale-[1.15] sm:scale-[1.25] transition-all duration-300"
                 />
               </div>
             </Link>
@@ -76,7 +79,7 @@ export default function Navbar() {
                   return (
                     <div
                       key={link.path}
-                      className="relative py-2 group"
+                      className="py-2 group"
                       onMouseEnter={() => setIsServicesDropdownOpen(true)}
                       onMouseLeave={() => setIsServicesDropdownOpen(false)}
                     >
@@ -85,44 +88,84 @@ export default function Navbar() {
                         className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 ${
                           isActive || pathname.startsWith('/services')
                             ? 'text-luxury-gold'
-                            : 'text-luxury-charcoalLight hover:text-luxury-gold'
+                            : 'text-white/80 hover:text-luxury-gold'
                         }`}
                       >
                         {link.name}
-                        <svg className={`w-3 h-3 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180 text-luxury-gold' : 'text-luxury-charcoalLight/60'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className={`w-3 h-3 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180 text-luxury-gold' : 'text-white/60'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                         </svg>
                       </Link>
                       
-                      {/* Dropdown Menu */}
+                      {/* Dropdown Mega Menu */}
                       <AnimatePresence>
                         {isServicesDropdownOpen && (
                           <motion.div
-                            initial={{ opacity: 0, y: 15 }}
+                            initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 15 }}
+                            exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[480px] bg-white rounded-3xl border border-luxury-beigeDark shadow-2xl p-6 grid grid-cols-2 gap-x-6 gap-y-3 z-50 overflow-hidden"
+                            className="absolute left-0 right-0 mx-auto top-full mt-0 w-[min(92vw,950px)] md:w-[min(90vw,600px)] lg:w-[850px] xl:w-[950px] max-h-[calc(100vh-6rem)] bg-luxury-charcoal rounded-b-3xl border-x border-b border-luxury-gold/20 shadow-2xl p-5 sm:p-6 lg:p-8 z-50 flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-y-auto overflow-x-hidden cursor-default"
                           >
                             {/* Accent gold top border */}
                             <div className="absolute top-0 left-0 right-0 h-[3px] gold-gradient" />
-                            {services.map((service) => {
-                              const isSubActive = pathname === `/services/${service.id}`;
-                              return (
-                                <Link
-                                  key={service.id}
-                                  href={`/services/${service.id}`}
-                                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${
-                                    isSubActive
-                                      ? 'text-luxury-gold bg-luxury-gold/5'
-                                      : 'text-luxury-charcoalLight hover:text-luxury-gold'
-                                  }`}
-                                >
-                                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" />
-                                  {service.name}
-                                </Link>
-                              );
-                            })}
+
+                            {/* Interior Section */}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 text-luxury-gold font-bold uppercase tracking-widest text-xs mb-4 border-b border-luxury-gold/20 pb-3">
+                                <Home size={14} />
+                                Interior Design
+                              </div>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                                {interiorServices.map((service) => {
+                                  const isSubActive = pathname === `/services/${service.id}`;
+                                  return (
+                                    <Link
+                                      key={service.id}
+                                      href={`/services/${service.id}`}
+                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${
+                                        isSubActive
+                                          ? 'text-luxury-gold bg-luxury-gold/5'
+                                          : 'text-white/80 hover:text-luxury-gold'
+                                      }`}
+                                    >
+                                      <div className="w-1 h-1 rounded-full bg-luxury-gold/60 shrink-0" />
+                                      <span className="truncate">{service.name}</span>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="h-[1px] w-full lg:h-auto lg:w-[1px] bg-luxury-gold/10 shrink-0" />
+
+                            {/* Exterior Section */}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 text-luxury-gold font-bold uppercase tracking-widest text-xs mb-4 border-b border-luxury-gold/20 pb-3">
+                                <Building2 size={14} />
+                                Exterior Design
+                              </div>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                                {exteriorServices.map((service) => {
+                                  const isSubActive = pathname === `/services/${service.id}`;
+                                  return (
+                                    <Link
+                                      key={service.id}
+                                      href={`/services/${service.id}`}
+                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${
+                                        isSubActive
+                                          ? 'text-luxury-gold bg-luxury-gold/5'
+                                          : 'text-white/80 hover:text-luxury-gold'
+                                      }`}
+                                    >
+                                      <div className="w-1 h-1 rounded-full bg-luxury-gold/60 shrink-0" />
+                                      <span className="truncate">{service.name}</span>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </div>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -137,7 +180,7 @@ export default function Navbar() {
                     className={`relative py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ${
                       isActive
                         ? 'text-luxury-gold'
-                        : 'text-luxury-charcoalLight hover:text-luxury-gold'
+                        : 'text-white/80 hover:text-luxury-gold'
                     }`}
                   >
                     {link.name}
@@ -166,7 +209,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full text-luxury-charcoal hover:bg-luxury-beigeDark/50 transition-colors"
+              className="md:hidden p-2 rounded-full text-white/90 hover:bg-white/10 transition-colors"
               aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -194,25 +237,25 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
-              className="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white z-50 p-6 flex flex-col justify-between shadow-2xl md:hidden"
+              className="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-luxury-charcoal z-50 p-6 flex flex-col justify-between shadow-2xl md:hidden"
             >
               {/* Header (Sticky / Fixed) */}
-              <div className="flex items-center justify-between border-b pb-6 border-luxury-beigeDark">
+              <div className="flex items-center justify-between border-b pb-6 border-luxury-gold/20">
                 <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                  <div className="relative w-32 h-10 flex items-center justify-center">
+                  <div className="relative w-44 h-10 flex items-center justify-center">
                     <Image
-                      src="/logo.png"
+                      src="/brand-logo.png"
                       alt="Di Versile Interior Logo"
                       fill
-                      sizes="128px"
+                      sizes="176px"
                       quality={100}
-                      className="object-contain"
+                      className="object-contain scale-[1.2]"
                     />
                   </div>
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-luxury-charcoal hover:bg-luxury-beigeDark/50"
+                  className="p-2 rounded-full text-white/90 hover:bg-white/10"
                 >
                   <X size={20} />
                 </button>
@@ -229,7 +272,7 @@ export default function Navbar() {
                         <div key={link.path} className="flex flex-col">
                           <button
                             onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                            className="flex items-center justify-between text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-beigeDark/40 text-luxury-charcoalLight text-left cursor-pointer"
+                            className="flex items-center justify-between text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-gold/20 text-white/80 text-left cursor-pointer"
                           >
                             <span>{link.name}</span>
                             <svg className={`w-4 h-4 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180 text-luxury-gold' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -253,8 +296,13 @@ export default function Navbar() {
                                 >
                                   View All Services
                                 </Link>
-                                
-                                {services.map((service) => (
+
+                                {/* Interior Design */}
+                                <div className="flex items-center gap-1.5 text-luxury-gold font-bold uppercase tracking-widest text-[10px] mt-2 mb-1">
+                                  <Home size={12} />
+                                  Interior Design
+                                </div>
+                                {interiorServices.map((service) => (
                                   <Link
                                     key={service.id}
                                     href={`/services/${service.id}`}
@@ -262,7 +310,30 @@ export default function Navbar() {
                                     className={`text-sm font-semibold py-1.5 ${
                                       pathname === `/services/${service.id}`
                                         ? 'text-luxury-gold'
-                                        : 'text-luxury-charcoalLight'
+                                        : 'text-white/70'
+                                    }`}
+                                  >
+                                    {service.name}
+                                  </Link>
+                                ))}
+
+                                {/* Gold Partition */}
+                                <div className="h-[1px] gold-gradient my-3" />
+
+                                {/* Exterior Design */}
+                                <div className="flex items-center gap-1.5 text-luxury-gold font-bold uppercase tracking-widest text-[10px] mb-1">
+                                  <Building2 size={12} />
+                                  Exterior Design
+                                </div>
+                                {exteriorServices.map((service) => (
+                                  <Link
+                                    key={service.id}
+                                    href={`/services/${service.id}`}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={`text-sm font-semibold py-1.5 ${
+                                      pathname === `/services/${service.id}`
+                                        ? 'text-luxury-gold'
+                                        : 'text-white/70'
                                     }`}
                                   >
                                     {service.name}
@@ -280,8 +351,8 @@ export default function Navbar() {
                         key={link.path}
                         href={link.path}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-beigeDark/40 transition-colors ${
-                          isActive ? 'text-luxury-gold' : 'text-luxury-charcoalLight'
+                        className={`text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-gold/20 transition-colors ${
+                          isActive ? 'text-luxury-gold' : 'text-white/80'
                         }`}
                       >
                         {link.name}
@@ -295,7 +366,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-4 mt-auto">
                 <a
                   href="tel:+918240602352"
-                  className="flex items-center justify-center gap-2 py-3 rounded-full bg-luxury-beigeDark text-luxury-charcoal font-semibold text-sm transition-all"
+                  className="flex items-center justify-center gap-2 py-3 rounded-full bg-white/10 text-white font-semibold text-sm transition-all hover:bg-white/20"
                 >
                   <Phone size={16} />
                   Call Support

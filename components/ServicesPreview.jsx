@@ -7,12 +7,14 @@ import { services } from '@/data/services';
 import * as Icons from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Reusable service card component to handle local image loading errors individually
 function ServiceCard({ service, index }) {
   const [imgSrc, setImgSrc] = useState(service.image);
 
   // Dynamically resolve the Lucide icon from its name string
   const IconComponent = Icons[service.icon] || Icons.Home;
+
+  // Dynamic category label
+  const categoryLabel = service.category === 'exterior' ? 'Exterior Design' : 'Interior Design';
 
   return (
     <motion.div
@@ -26,50 +28,49 @@ function ServiceCard({ service, index }) {
       {/* Sliding gold line at the top edge */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
 
-      {/* Card Image Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-        <Image
-          src={imgSrc}
-          alt={service.name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          onError={() => setImgSrc(service.tempImage)}
-        />
-        {/* Elegant overlay card gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+      <Link href={`/services/${service.id}`} className="flex flex-col flex-grow">
+        {/* Card Image Container */}
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
+          <Image
+            src={imgSrc}
+            alt={service.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+            onError={() => setImgSrc(`https://placehold.co/800x600/1c1c1e/d4af37?text=${encodeURIComponent(service.name)}&font=montserrat`)}
+          />
+          {/* Elegant overlay card gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-        {/* Floating Category Tag */}
-        <div className="absolute top-4 left-4 bg-black/45 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-[9px] font-extrabold tracking-widest text-white uppercase shadow-md transition-all duration-500">
-          Interior Solution
-        </div>
-      </div>
-
-      {/* Card Details */}
-      <div className="p-6 flex flex-col flex-grow relative bg-white">
-        {/* Icon Floating Badge */}
-        <div className="absolute -top-7 right-6 w-14 h-14 rounded-full gold-gradient text-luxury-charcoalDark flex items-center justify-center shadow-lg border-4 border-white z-10 transition-all duration-500 group-hover:rotate-12 group-hover:scale-105 group-hover:shadow-luxury-gold/25">
-          <IconComponent size={22} />
+          {/* Floating Category Tag */}
+          <div className="absolute top-4 left-4 bg-black/45 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-[9px] font-extrabold tracking-widest text-white uppercase shadow-md transition-all duration-500">
+            {categoryLabel}
+          </div>
         </div>
 
-        <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-3 pr-10">
-          {service.name}
-        </h3>
+        {/* Card Details */}
+        <div className="p-6 flex flex-col flex-grow relative bg-white">
+          {/* Icon Floating Badge */}
+          <div className="absolute -top-7 right-6 w-14 h-14 rounded-full gold-gradient text-luxury-charcoalDark flex items-center justify-center shadow-lg border-4 border-white z-10 transition-all duration-500 group-hover:rotate-12 group-hover:scale-105 group-hover:shadow-luxury-gold/25">
+            <IconComponent size={22} />
+          </div>
 
-        <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-6 flex-grow">
-          {service.description}
-        </p>
+          <h3 className="font-serif text-xl font-extrabold text-luxury-charcoal mb-3 pr-10">
+            {service.name}
+          </h3>
 
-        <div className="mt-auto border-t border-luxury-beigeDark/50 pt-5 flex items-center justify-between">
-          <Link
-            href={`/services/${service.id}`}
-            className="text-xs font-bold text-luxury-charcoal hover:text-luxury-gold uppercase tracking-widest flex items-center gap-1.5 transition-colors duration-300"
-          >
-            Explore Solutions
-            <Icons.ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed mb-6 flex-grow">
+            {service.description}
+          </p>
+
+          <div className="mt-auto border-t border-luxury-beigeDark/50 pt-5 flex items-center justify-between">
+            <span className="text-xs font-bold text-luxury-charcoal group-hover:text-luxury-gold uppercase tracking-widest flex items-center gap-1.5 transition-colors duration-300">
+              Explore Solutions
+              <Icons.ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
+          </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
@@ -112,7 +113,7 @@ export default function ServicesPreview() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed"
           >
-            We create cohesive interiors that balance aesthetics, functionality and individuality — from ply &amp; wooden furniture, flooring, and false ceilings to electrical work, putty &amp; painting, and wall decorative finishes. Complete interior &amp; exterior work, under one roof, across Goa.
+            We create cohesive interiors that balance aesthetics, functionality and individuality — and design exteriors that make a strong first impression. Complete interior &amp; exterior work, under one roof, across Kolkata.
           </motion.p>
         </div>
 

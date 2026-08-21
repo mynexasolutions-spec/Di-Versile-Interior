@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
           </h2>
           <div className="w-20 h-[2.5px] gold-gradient mx-auto my-6 rounded-full" />
           <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed">
-            We combine premium design craftsmanship with seamless execution, making us Goa's preferred interior &amp; exterior design studio.
+            We combine premium design craftsmanship with seamless execution, making us Kolkata's preferred interior &amp; exterior design studio.
           </p>
         </div>
 
@@ -102,3 +102,4 @@ export default function WhyChooseUs() {
     </section>
   );
 }
+

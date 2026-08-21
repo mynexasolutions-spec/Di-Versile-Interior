@@ -6,7 +6,7 @@ import { Phone, ArrowRight } from 'lucide-react';
 
 export default function CTA() {
   const whatsappUrl = `https://wa.me/918240602352?text=${encodeURIComponent(
-    'Hi Di Versile Interior, I would like to enquire about your interior and home furnishing services.'
+    'Hi Di Versile Interior, I would like to enquire about your interior and exterior design services.'
   )}`;
 
   return (
@@ -43,7 +43,7 @@ export default function CTA() {
                   <span className="text-gold-gradient block sm:inline">Space?</span>
                 </h2>
                 <p className="text-luxury-charcoalLight font-semibold text-base sm:text-lg leading-relaxed max-w-2xl">
-                  Whether you're building a new home, renovating an existing space, opening a café, or setting up an office — tell us about your project. Di Versile Interior offers expert design consultations across Goa, from concept to completion.
+                  Whether you're building a new home, renovating an existing space, opening a café, or setting up an office — tell us about your project. Di Versile Interior offers expert design consultations across Kolkata, from concept to completion.
                 </p>
               </div>
 
@@ -92,3 +92,4 @@ export default function CTA() {
     </section>
   );
 }
+
