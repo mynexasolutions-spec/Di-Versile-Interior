@@ -1,0 +1,99 @@
+/* Site-wide font configuration lives in ./fonts.css — edit that file to
+   change the typeface used across the whole site (see comments there). */
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #fcfbf9;
+    /* luxury-beige */
+    color: #1c1c1e;
+    /* luxury-charcoal */
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply antialiased;
+    min-height: 100vh;
+  }
+}
+
+/* Luxury Styling Utilities */
+.glass-nav {
+  background: rgba(252, 251, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #b8901c 0%, #d4af37 50%, #f4e8c1 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #c9941f 0%, #e8c64a 40%, #d4af37 70%, #a07820 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.luxury-shadow-hover {
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.08);
+}
+
+.luxury-border {
+  border-color: rgba(212, 175, 55, 0.15);
+}
+
+/* Horizontal scrolling helper for brands or galleries on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Infinite Marquee Animations ── */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-33.333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 30s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 28s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
