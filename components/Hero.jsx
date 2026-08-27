@@ -8,13 +8,6 @@ import { ArrowRight, ShieldCheck, Award, MapPin, Star } from 'lucide-react';
 
 const slides = [
   {
-    id: 4,
-    image: '/images/Hero/hero4.png',
-    headline1: 'From an Empty Shell to',
-    headline2: 'a Complete Space.',
-    sub: 'Ceilings, walls, floors, furniture, lighting, façades and cladding — we bring every layer together into one seamless transformation, indoors and out.',
-  },
-  {
     id: 1,
     image: '/images/Hero/hero1.png',
     headline1: 'Creating Spaces That',
