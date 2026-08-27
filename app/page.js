@@ -6,16 +6,19 @@ import Brands from '@/components/Brands';
 import Gallery from '@/components/Gallery';
 import CTA from '@/components/CTA';
 import Clients from '@/components/Clients';
+import LeadershipPage from '@/components/LedershipPage';
 
 export default function Home() {
   return (
     <>
+    
       <Hero />
       <ServicesPreview />
       <Spaces />
       <WhyChooseUs />
       <Brands />
       <Gallery />
+      <LeadershipPage/>
       <Clients/>
       <CTA />
     </>

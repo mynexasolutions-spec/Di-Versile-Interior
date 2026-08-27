@@ -17,6 +17,9 @@ const clients = [
   { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c11.jpeg' },
   { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c12.jpeg' },
   { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c13.jpeg' },
+  { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c14.jpeg' },
+  { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c15.jpeg' },
+  { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c16.jpeg' },
 ];
 
 // Triplicate for seamless infinite loop
