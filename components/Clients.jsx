@@ -22,20 +22,19 @@ const clients = [
   { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c16.jpeg' },
 ];
 
-// Triplicate for seamless infinite loop
-const ticker = [...clients, ...clients, ...clients];
+// Split into two rows and triplicate each for a seamless infinite loop
+const half = Math.ceil(clients.length / 2);
+const rowA = [...clients.slice(0, half), ...clients.slice(0, half), ...clients.slice(0, half)];
+const rowB = [...clients.slice(half), ...clients.slice(half), ...clients.slice(half)];
 
-function ClientPill({ client }) {
+function LogoCard({ client }) {
   return (
-    <div className="flex items-center justify-center px-8 py-5 mx-4 rounded-2xl bg-white border border-luxury-beigeDark/60 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-default select-none">
-      {/* Larger Logo image */}
-      <div className="relative w-36 h-16 shrink-0">
-        <Image
+    <div className="flex items-center justify-center px-6 py-5 mx-3 rounded-xl bg-white border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.25)] hover:-translate-y-0.5 transition-all duration-500 shrink-0 group cursor-default select-none">
+      <div className="relative w-32 h-14 sm:w-40 sm:h-16 shrink-0 flex items-center justify-center">
+        <img
           src={client.logo}
           alt={client.name}
-          fill
-          sizes="144px"
-          className="object-contain group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
         />
       </div>
     </div>
@@ -44,10 +43,24 @@ function ClientPill({ client }) {
 
 export default function Clients() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-luxury-beige to-white border-b border-luxury-beigeDark/40 relative overflow-hidden">
-      {/* Background ambient gold glowing lights */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative py-20 bg-luxury-charcoal overflow-hidden">
+      {/* Background photo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/clientcover.jpeg"
+          alt="Background"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Dark overlay so logos & text stay readable */}
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
+      </div>
+
+      {/* Ambient gold glows */}
+      <div className="absolute top-1/3 left-1/5 -translate-y-1/2 w-96 h-96 bg-luxury-gold/10 rounded-full blur-[130px] pointer-events-none z-0" />
+      <div className="absolute bottom-0 right-1/5 w-96 h-96 bg-luxury-gold/10 rounded-full blur-[130px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -58,40 +71,28 @@ export default function Clients() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          {/* <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
-            Our Associates
-          </span> */}
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
-            Our Respective <span className="text-gold-gradient">Clients</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
+            Our Respected <span className="text-gold-gradient">Clients</span>
           </h2>
-          <div className="w-20 h-[2.5px] gold-gradient mx-auto my-4 rounded-full" />
-          {/* <p className="text-luxury-charcoalLight font-semibold text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            We source materials and furnishings from the industry's premier lifestyle leaders.
-          </p> */}
+          <div className="w-20 h-[2.5px] gold-gradient mx-auto mt-4 rounded-full" />
         </motion.div>
       </div>
 
-      {/* ── Single Infinite Marquee ── */}
-      <div className="relative w-full overflow-hidden py-2">
+      {/* ── Two-row infinite marquee, opposite directions ── */}
+      <div className="relative w-full overflow-hidden py-2 space-y-5 z-10">
         <div className="flex animate-marquee-left hover:pause-marquee">
-          {ticker.map((client, i) => (
-            <div
-              key={`client-${i}`}
-              className="flex items-center justify-center px-6 py-2.5 mx-3 rounded-2xl bg-white border border-luxury-beigeDark/70 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_8px_20px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-pointer select-none"
-            >
-              <div className="relative w-44 h-16 shrink-0 flex items-center justify-center">
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-            </div>
+          {rowA.map((client, i) => (
+            <LogoCard key={`row-a-${i}`} client={client} />
+          ))}
+        </div>
+        <div className="flex animate-marquee-right hover:pause-marquee">
+          {rowB.map((client, i) => (
+            <LogoCard key={`row-b-${i}`} client={client} />
           ))}
         </div>
       </div>
 
-      {/* Bottom Authorized Dealer Badge */}
+      {/* Bottom accent divider */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -101,9 +102,6 @@ export default function Clients() {
           className="flex items-center justify-center gap-4 mt-12"
         >
           <div className="h-[1px] w-12 bg-luxury-gold/40" />
-          {/* <span className="text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold">
-            Authorized Dealer &amp; Service Partner
-          </span> */}
           <div className="h-[1px] w-12 bg-luxury-gold/40" />
         </motion.div>
       </div>
