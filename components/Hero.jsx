@@ -69,18 +69,15 @@ export default function Hero() {
             transition={{ duration: 1, ease: 'easeInOut' }}
             className="absolute inset-0 z-0"
           >
-            <div className="relative w-full aspect-square">
-  <Image
-    src={slide.image}
-    alt={slide.headline1}
-    fill
-    priority
-    sizes="100vw"
-    className="object-contain"
-    style={{marginTop:"100px"}}
-  />
-</div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+            <Image
+              src={slide.image}
+              alt={slide.headline1}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
           </motion.div>
         </AnimatePresence>
 
