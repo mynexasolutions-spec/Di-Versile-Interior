@@ -16,7 +16,7 @@ const ticker = [...brands, ...brands, ...brands];
 
 function BrandPill({ brand }) {
   return (
-    <div className="flex items-center justify-center px-8 py-5 mx-4 rounded-2xl bg-white border border-luxury-beigeDark/60 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-default select-none">
+    <div className="flex items-center justify-center px-8 py-5 mx-4 rounded-2xl bg-transparent border border-luxury-beigeDark/60 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_10px_30px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-default select-none">
       {/* Larger Logo image */}
       <div className="relative w-36 h-16 shrink-0">
         <Image
@@ -24,7 +24,7 @@ function BrandPill({ brand }) {
           alt={brand.name}
           fill
           sizes="144px"
-          className="object-contain group-hover:scale-110 transition-transform duration-500"
+          className="object-contain group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
         />
       </div>
     </div>
@@ -66,13 +66,13 @@ export default function Brands() {
           {ticker.map((brand, i) => (
             <div
               key={`brand-${i}`}
-              className="flex items-center justify-center px-6 py-2.5 mx-3 rounded-2xl bg-white border border-luxury-beigeDark/70 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_8px_20px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-pointer select-none"
+              className="flex items-center justify-center px-6 py-2.5 mx-3 rounded-2xl bg-transparent border border-luxury-beigeDark/70 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_8px_20px_rgba(212,175,55,0.12)] transition-all duration-500 shrink-0 group cursor-pointer select-none"
             >
               <div className="relative w-44 h-16 shrink-0 flex items-center justify-center">
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
                 />
               </div>
             </div>

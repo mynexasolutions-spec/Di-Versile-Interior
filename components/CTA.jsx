@@ -302,14 +302,6 @@ export default function CTA() {
                   "
                 >
                   Request a Consultation
-
-                  <ArrowRight
-                    size={13}
-                    className="
-                      group-hover:translate-x-1
-                      transition-transform
-                    "
-                  />
                 </Link>
 
 
@@ -334,14 +326,6 @@ export default function CTA() {
                   "
                 >
                   View Our Projects
-
-                  <ArrowRight
-                    size={13}
-                    className="
-                      group-hover:translate-x-1
-                      transition-transform
-                    "
-                  />
                 </Link>
 
               </div>

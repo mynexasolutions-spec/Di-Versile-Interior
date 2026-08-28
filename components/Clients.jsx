@@ -1,40 +1,39 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const clients = [
-  { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c1.jpeg' },
-  { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c2.jpeg' },
-  { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c3.jpeg' },
-  { id: 'welspun', name: 'Welspun', tagline: 'Home Textiles', logo: '/images/clients/c4.jpeg' },
-  { id: 'obsessions', name: 'Obsessions', tagline: 'Wall Décor', logo: '/images/clients/c5.jpeg' },
-  { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c6.jpeg' },
-  { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c7.jpeg' },
-  { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c8.jpeg' },
-  { id: 'welspun', name: 'Welspun', tagline: 'Home Textiles', logo: '/images/clients/c9.jpeg' },
-  { id: 'obsessions', name: 'Obsessions', tagline: 'Wall Décor', logo: '/images/clients/c10.jpeg' },
-  { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c11.jpeg' },
-  { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c12.jpeg' },
-  { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c13.jpeg' },
-  { id: 'decor', name: "D'Decor", tagline: 'Fabrics & Drapes', logo: '/images/clients/c14.jpeg' },
-  { id: 'fabio', name: 'Fabio Furnishings', tagline: 'Premium Sofas', logo: '/images/clients/c15.jpeg' },
-  { id: 'somfy', name: 'Somfy', tagline: 'Smart Blinds', logo: '/images/clients/c16.jpeg' },
+const clientList = [
+  { id: 'wefit', name: 'Wefit', logo: '/images/clients/c3.jpeg' },
+  { id: 'mojopizza', name: 'Mojo Pizza', logo: '/images/clients/c4.jpeg' },
+  { id: 'zaza', name: 'Zaza Mughal Biryani', logo: '/images/clients/c5.jpeg' },
+  { id: 'humtoum', name: 'HumToum', logo: '/images/clients/c6.jpeg' },
+  { id: 'larsen', name: 'Larsen & Toubro', logo: '/images/clients/c7.jpeg' },
+  { id: 'humtoumsweets', name: 'HumToum Sweets', logo: '/images/clients/c8.jpeg' },
+  { id: 'signatech', name: 'Signatech', logo: '/images/clients/c9.jpeg' },
+  { id: 'leancrust', name: 'LeanCrust Pizza', logo: '/images/clients/c10.jpeg' },
+  { id: 'nescafe', name: 'Nescafe', logo: '/images/clients/c11.jpeg' },
+  { id: 'bihani', name: 'Bihani Group', logo: '/images/clients/c12.jpeg' },
+  { id: 'eatclub', name: 'Eat Club', logo: '/images/clients/c13.jpeg' },
+  { id: 'box8', name: 'Box8', logo: '/images/clients/c14.jpeg' },
+  { id: 'totsandmoms', name: 'Tots & Moms', logo: '/images/clients/c15.jpeg' },
+  { id: 'kgc', name: 'KGC', logo: '/images/clients/c16.jpeg' },
 ];
 
 // Split into two rows and triplicate each for a seamless infinite loop
-const half = Math.ceil(clients.length / 2);
-const rowA = [...clients.slice(0, half), ...clients.slice(0, half), ...clients.slice(0, half)];
-const rowB = [...clients.slice(half), ...clients.slice(half), ...clients.slice(half)];
+const half = Math.ceil(clientList.length / 2);
+const rowA = [...clientList.slice(0, half), ...clientList.slice(0, half), ...clientList.slice(0, half)];
+const rowB = [...clientList.slice(half), ...clientList.slice(half), ...clientList.slice(half)];
 
 function LogoCard({ client }) {
   return (
-    <div className="flex items-center justify-center px-6 py-5 mx-3 rounded-xl bg-white border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.25)] hover:-translate-y-0.5 transition-all duration-500 shrink-0 group cursor-default select-none">
-      <div className="relative w-32 h-14 sm:w-40 sm:h-16 shrink-0 flex items-center justify-center">
+    <div className="flex items-center justify-center px-6 py-4 mx-3 rounded-xl bg-transparent border border-luxury-beigeDark/70 hover:border-luxury-gold/40 shadow-sm hover:shadow-[0_8px_20px_rgba(212,175,55,0.12)] hover:-translate-y-0.5 transition-all duration-500 shrink-0 group cursor-default select-none w-36 h-18 sm:w-44 sm:h-22">
+      <div className="relative w-full h-full flex items-center justify-center">
         <img
           src={client.logo}
           alt={client.name}
-          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+          className="max-w-full max-h-full object-contain rounded-md group-hover:scale-105 transition-transform duration-500"
         />
       </div>
     </div>
@@ -43,24 +42,10 @@ function LogoCard({ client }) {
 
 export default function Clients() {
   return (
-    <section className="relative py-20 bg-luxury-charcoal overflow-hidden">
-      {/* Background photo */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/clientcover.jpeg"
-          alt="Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        {/* Dark overlay so logos & text stay readable */}
-        <div className="absolute inset-0 bg-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
-      </div>
-
-      {/* Ambient gold glows */}
-      <div className="absolute top-1/3 left-1/5 -translate-y-1/2 w-96 h-96 bg-luxury-gold/10 rounded-full blur-[130px] pointer-events-none z-0" />
-      <div className="absolute bottom-0 right-1/5 w-96 h-96 bg-luxury-gold/10 rounded-full blur-[130px] pointer-events-none z-0" />
+    <section className="relative py-20 bg-gradient-to-b from-white via-luxury-beige to-white border-b border-luxury-beigeDark/40 overflow-hidden">
+      {/* Subtle background ambient gold glowing lights */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -71,14 +56,23 @@ export default function Clients() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
+          <span className="text-luxury-gold uppercase text-[11px] sm:text-xs font-bold tracking-[0.25em] block mb-2">
+            — TRUSTED BY —
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-luxury-charcoal">
             Our Respected <span className="text-gold-gradient">Clients</span>
           </h2>
-          <div className="w-20 h-[2.5px] gold-gradient mx-auto mt-4 rounded-full" />
+
+          {/* Custom Ornament: line-circle-line */}
+          <div className="flex items-center justify-center gap-3 mt-4">
+            <div className="w-12 h-[1px] bg-luxury-gold/40" />
+            <div className="w-1.5 h-1.5 rounded-full border border-luxury-gold bg-transparent" />
+            <div className="w-12 h-[1px] bg-luxury-gold/40" />
+          </div>
         </motion.div>
       </div>
 
-      {/* ── Two-row infinite marquee, opposite directions ── */}
+      {/* ── Two-row infinite marquee scrolling ticker, opposite directions ── */}
       <div className="relative w-full overflow-hidden py-2 space-y-5 z-10">
         <div className="flex animate-marquee-left hover:pause-marquee">
           {rowA.map((client, i) => (
@@ -92,17 +86,24 @@ export default function Clients() {
         </div>
       </div>
 
-      {/* Bottom accent divider */}
+      {/* View Our Work Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center justify-center gap-4 mt-12"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12"
         >
-          <div className="h-[1px] w-12 bg-luxury-gold/40" />
-          <div className="h-[1px] w-12 bg-luxury-gold/40" />
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-luxury-gold border border-luxury-gold text-luxury-charcoalDark font-bold text-sm hover:bg-transparent hover:text-luxury-gold transition-all duration-300"
+          >
+            View Our Work
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
         </motion.div>
       </div>
     </section>

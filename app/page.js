@@ -16,10 +16,10 @@ export default function Home() {
       <ServicesPreview />
       <Spaces />
       <WhyChooseUs />
-      <Brands />
       <Gallery />
       <LeadershipPage/>
       <Clients/>
+      <Brands />
       <CTA />
     </>
   );
