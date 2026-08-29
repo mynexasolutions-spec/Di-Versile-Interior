@@ -180,7 +180,7 @@ export default function CTA() {
                   max-w-2xl
                 ">
                   Whether you're building a new home, renovating an
-                  existing space, opening a café, or setting up an
+                  existing space, opening a cafe, or setting up an
                   office — tell us about your project. Di Versile
                   Interior offers expert design consultations across
                   Kolkata, from concept to completion.

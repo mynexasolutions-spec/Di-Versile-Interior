@@ -90,7 +90,7 @@ export default function Footer() {
                 { name: 'Wall Treatments', link: '/services#wall-panelling-wall-treatments' },
                 { name: 'Flooring', link: '/services#flooring-selection-installation' },
                 { name: 'Lighting Design', link: '/services#lighting-design' },
-                { name: 'Façade Design', link: '/services#residential-facade-design' },
+                { name: 'Facade Design', link: '/services#residential-facade-design' },
                 { name: 'Metal Works', link: '/services#ms-metal-works' },
               ].map((serv, index) => (
                 <li key={index}>

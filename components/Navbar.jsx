@@ -47,11 +47,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-luxury-charcoal/95 backdrop-blur-xl border-luxury-gold/20 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-luxury-charcoal/95 backdrop-blur-xl border-luxury-gold/20 ${isScrolled
             ? 'py-1 sm:py-1.5 shadow-lg shadow-luxury-gold/5'
             : 'py-2 sm:py-3'
-        }`}
+          }`}
       >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -74,7 +73,7 @@ export default function Navbar() {
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => {
                 const isActive = pathname === link.path;
-                
+
                 if (link.name === 'Services') {
                   return (
                     <div
@@ -85,18 +84,17 @@ export default function Navbar() {
                     >
                       <Link
                         href={link.path}
-                        className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                          isActive || pathname.startsWith('/services')
+                        className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 ${isActive || pathname.startsWith('/services')
                             ? 'text-luxury-gold'
                             : 'text-white/80 hover:text-luxury-gold'
-                        }`}
+                          }`}
                       >
                         {link.name}
                         <svg className={`w-3 h-3 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180 text-luxury-gold' : 'text-white/60'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                         </svg>
                       </Link>
-                      
+
                       {/* Dropdown Mega Menu */}
                       <AnimatePresence>
                         {isServicesDropdownOpen && (
@@ -105,7 +103,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute left-0 right-0 mx-auto top-full mt-0 w-[min(92vw,950px)] md:w-[min(90vw,600px)] lg:w-[850px] xl:w-[950px] max-h-[calc(100vh-6rem)] bg-luxury-charcoal rounded-b-3xl border-x border-b border-luxury-gold/20 shadow-2xl p-5 sm:p-6 lg:p-8 z-50 flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-y-auto overflow-x-hidden cursor-default"
+                            className="absolute left-0 right-0 mx-auto top-full mt-0 w-[min(96vw,1200px)] md:w-[min(94vw,700px)] lg:w-[1020px] xl:w-[1200px] max-h-[calc(100vh-6rem)] bg-luxury-charcoal rounded-b-3xl border-x border-b border-luxury-gold/20 shadow-2xl p-5 sm:p-6 lg:p-8 z-50 flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-y-auto overflow-x-hidden cursor-default"
                           >
                             {/* Accent gold top border */}
                             <div className="absolute top-0 left-0 right-0 h-[3px] gold-gradient" />
@@ -123,11 +121,10 @@ export default function Navbar() {
                                     <Link
                                       key={service.id}
                                       href={`/services/${service.id}`}
-                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${
-                                        isSubActive
+                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${isSubActive
                                           ? 'text-luxury-gold bg-luxury-gold/5'
                                           : 'text-white/80 hover:text-luxury-gold'
-                                      }`}
+                                        }`}
                                     >
                                       <div className="w-1 h-1 rounded-full bg-luxury-gold/60 shrink-0" />
                                       <span className="truncate">{service.name}</span>
@@ -153,11 +150,10 @@ export default function Navbar() {
                                     <Link
                                       key={service.id}
                                       href={`/services/${service.id}`}
-                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${
-                                        isSubActive
+                                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-300 hover:bg-luxury-gold/10 ${isSubActive
                                           ? 'text-luxury-gold bg-luxury-gold/5'
                                           : 'text-white/80 hover:text-luxury-gold'
-                                      }`}
+                                        }`}
                                     >
                                       <div className="w-1 h-1 rounded-full bg-luxury-gold/60 shrink-0" />
                                       <span className="truncate">{service.name}</span>
@@ -177,11 +173,10 @@ export default function Navbar() {
                   <Link
                     key={link.path}
                     href={link.path}
-                    className={`relative py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                      isActive
+                    className={`relative py-2 text-sm font-semibold tracking-wide transition-colors duration-300 ${isActive
                         ? 'text-luxury-gold'
                         : 'text-white/80 hover:text-luxury-gold'
-                    }`}
+                      }`}
                   >
                     {link.name}
                     {isActive && (
@@ -266,7 +261,7 @@ export default function Navbar() {
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => {
                     const isActive = pathname === link.path;
-                    
+
                     if (link.name === 'Services') {
                       return (
                         <div key={link.path} className="flex flex-col">
@@ -279,7 +274,7 @@ export default function Navbar() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                             </svg>
                           </button>
-                          
+
                           <AnimatePresence initial={false}>
                             {isMobileServicesOpen && (
                               <motion.div
@@ -307,11 +302,10 @@ export default function Navbar() {
                                     key={service.id}
                                     href={`/services/${service.id}`}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`text-sm font-semibold py-1.5 ${
-                                      pathname === `/services/${service.id}`
+                                    className={`text-sm font-semibold py-1.5 ${pathname === `/services/${service.id}`
                                         ? 'text-luxury-gold'
                                         : 'text-white/70'
-                                    }`}
+                                      }`}
                                   >
                                     {service.name}
                                   </Link>
@@ -330,11 +324,10 @@ export default function Navbar() {
                                     key={service.id}
                                     href={`/services/${service.id}`}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`text-sm font-semibold py-1.5 ${
-                                      pathname === `/services/${service.id}`
+                                    className={`text-sm font-semibold py-1.5 ${pathname === `/services/${service.id}`
                                         ? 'text-luxury-gold'
                                         : 'text-white/70'
-                                    }`}
+                                      }`}
                                   >
                                     {service.name}
                                   </Link>
@@ -351,9 +344,8 @@ export default function Navbar() {
                         key={link.path}
                         href={link.path}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-gold/20 transition-colors ${
-                          isActive ? 'text-luxury-gold' : 'text-white/80'
-                        }`}
+                        className={`text-lg font-semibold tracking-wide py-2 border-b border-dashed border-luxury-gold/20 transition-colors ${isActive ? 'text-luxury-gold' : 'text-white/80'
+                          }`}
                       >
                         {link.name}
                       </Link>

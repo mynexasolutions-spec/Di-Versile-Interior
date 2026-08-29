@@ -52,7 +52,7 @@ const spaces = [
       'Studios',
       'Clinics',
       'Boutiques',
-      'Cafés',
+      'Cafes',
       'Restaurants',
       'Small businesses & workspaces',
     ],
@@ -66,7 +66,7 @@ const spaces = [
     description: 'Hospitality spaces are about creating an experience that people remember. We design welcoming, character-driven environments where interiors, lighting, furniture, materials and branding work together.',
     listLabel: 'We design:',
     items: [
-      'Cafés',
+      'Cafes',
       'Restaurants',
       'Lounges',
       'Boutique hospitality spaces',
@@ -74,7 +74,7 @@ const spaces = [
       'Reception spaces',
       'Dining areas',
       'Outdoor seating',
-      'Hospitality façades',
+      'Hospitality facades',
     ],
   },
   {
@@ -213,7 +213,7 @@ export default function Spaces() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-luxury-charcoalLight font-semibold text-sm sm:text-base leading-relaxed"
           >
-            From homes to businesses, cafés to classrooms — we design and execute spaces suited to how they're actually lived in and used.
+            From homes to businesses, cafes to classrooms — we design and execute spaces suited to how they're actually lived in and used.
           </motion.p>
         </div>
 

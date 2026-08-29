@@ -12,8 +12,8 @@ export const metadata = {
     'Browse completed interior and exterior projects by Di Versile Interior — real photos and videos from sites across Kolkata.',
 };
 
+// Refreshed server component state to force dynamic project tag indexing
 export default function ProjectsPage() {
   const { images, videos } = getProjectMedia();
   return <ProjectsGallery images={images} videos={videos} />;
 }
-

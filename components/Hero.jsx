@@ -26,7 +26,7 @@ const slides = [
     image: '/images/Hero/hero3.png',
     headline1: 'From an Empty Shell to',
     headline2: 'a Complete Space.',
-    sub: 'Ceilings, walls, floors, furniture, lighting, façades and cladding — we bring every layer together into one seamless transformation, indoors and out.',
+    sub: 'Ceilings, walls, floors, furniture, lighting, facades and cladding — we bring every layer together into one seamless transformation, indoors and out.',
   },
   
 ];

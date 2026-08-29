@@ -55,9 +55,18 @@ export default function LeadershipPage() {
             <div className="w-14 h-[2px] gold-gradient my-3 rounded-full" />
             
             {/* Description Paragraph */}
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 max-w-xl drop-shadow-sm font-medium font-sans">
-              Transform your space with our exceptional interior design services. We create stylish and functional environments tailored to your unique taste and lifestyles.
-            </p>
+            <div className="mb-6 max-w-xl">
+              <p className="font-serif text-lg sm:text-xl md:text-2xl font-bold italic leading-relaxed text-luxury-gold drop-shadow-sm">
+                "Good design is intentional, not incidental."
+              </p>
+              <div className="w-24 h-[1px] bg-luxury-gold/30 my-4" />
+              <p className="text-white/85 text-sm sm:text-base leading-relaxed font-semibold drop-shadow-sm font-sans">
+                Spaces that look good today and live well every day.
+              </p>
+              <p className="text-white/80 text-xs sm:text-sm md:text-[15px] leading-relaxed font-medium mt-3 text-white/70">
+                Transform your space with our exceptional interior design services. We create stylish and functional environments tailored to your unique taste and lifestyles.
+              </p>
+            </div>
 
             {/* Features row */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-2">
@@ -111,8 +120,8 @@ export default function LeadershipPage() {
               
               {/* Text Info */}
               <div className="flex flex-col">
-                <p className="text-luxury-gold font-serif text-[17px] sm:text-lg md:text-xl font-bold tracking-wider">
-                  ~ MOBIN KHAN
+                <p className="text-luxury-gold font-serif text-[17px] sm:text-lg md:text-xl font-bold tracking-wider whitespace-nowrap">
+                  MOBIN KHAN
                 </p>
                 <p className="text-white/70 text-[12px] sm:text-sm mt-0.5 font-medium">
                   ( Managing Director )
