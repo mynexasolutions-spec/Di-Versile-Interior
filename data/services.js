@@ -271,7 +271,7 @@ export const services = [
     name: 'Signage Integration',
     category: 'exterior',
     icon: 'Type',
-    image: '/images/services/SignageIntegration.jpg',
+    image: '/images/services/signage-integration.webp',
     description: 'Seamless signage integration into your facade design — ensuring brand visibility while maintaining the architectural aesthetics.',
   },
   {
