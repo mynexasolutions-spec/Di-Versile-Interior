@@ -63,9 +63,7 @@ function ProjectDetails({ items, activeIndex, onBack, onPrev, onNext, onSelectIn
             Back to Projects
           </button>
 
-          <span className="text-xs font-bold tracking-widest text-luxury-gold uppercase block mb-3">
-            Project #{String(activeIndex + 1).padStart(2, '0')} of {items.length}
-          </span>
+
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-luxury-charcoal mb-4">
             {item.name}
           </h1>
@@ -227,10 +225,7 @@ function ProjectCard({ item, index, projectTag, onOpen }) {
       {/* Sliding gold line at the top edge */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30 pointer-events-none" />
 
-      {/* Project number badge */}
-      <div className="absolute top-4 left-4 z-30 px-3 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[10px] font-extrabold tracking-widest text-white uppercase pointer-events-none">
-        {projectTag}
-      </div>
+
 
       {isVideo ? (
         <>
