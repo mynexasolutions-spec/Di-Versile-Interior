@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react';
 import CTA from './CTA';
+import { projectDescriptions } from '@/data/projectDescriptions';
 
 
 const expresso2 = '/projects/insideImages/Elixir-&-Espresso-02.jpeg';
@@ -98,7 +99,7 @@ function ProjectDetails({ items, activeIndex, onBack, onPrev, onNext, onSelectIn
               {item.type === 'video' ? (
                 <video
                   key={item.src}
-                  src={item.src}
+                  src={encodeURI(item.src)}
                   controls
                   autoPlay
                   playsInline
@@ -186,7 +187,7 @@ function ProjectDetails({ items, activeIndex, onBack, onPrev, onNext, onSelectIn
                 }`}
             >
               {media.type === 'video' ? (
-                <video src={`${media.src}#t=1`} className="w-full h-full object-cover" muted preload="metadata" />
+                <video src={`${encodeURI(media.src)}#t=1`} className="w-full h-full object-cover" muted preload="metadata" />
               ) : (
                 <Image
                   src={media.src}
@@ -210,8 +211,22 @@ function ProjectDetails({ items, activeIndex, onBack, onPrev, onNext, onSelectIn
 }
 
 /* ── Project Card ─────────────────────────────────── */
-function ProjectCard({ item, index, projectTag, onOpen }) {
-  const isVideo = item.type === 'video';
+// A "project" is a group of every image/video that shares the same
+// (humanized) file name — e.g. all 7 "Elixir & Espresso" photos. The card
+// shows one cover thumbnail plus a count badge; clicking it opens the
+// lightbox scoped to just that project's own media.
+function ProjectCard({ group, index, onOpen }) {
+  const cover = group.items[0];
+  const isVideo = cover.type === 'video';
+
+  const photoCount = group.items.filter((i) => i.type === 'image').length;
+  const videoCount = group.items.filter((i) => i.type === 'video').length;
+  const countLabel = [
+    photoCount > 0 ? `${photoCount} Photo${photoCount > 1 ? 's' : ''}` : null,
+    videoCount > 0 ? `${videoCount} Video${videoCount > 1 ? 's' : ''}` : null,
+  ]
+    .filter(Boolean)
+    .join(' • ');
 
   return (
     <motion.div
@@ -225,42 +240,49 @@ function ProjectCard({ item, index, projectTag, onOpen }) {
       {/* Sliding gold line at the top edge */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-luxury-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30 pointer-events-none" />
 
-
-
       {isVideo ? (
-        <>
-          <video
-            src={`${item.src}#t=1`}
-            className="absolute inset-0 w-full h-full object-cover z-0 bg-black pointer-events-none"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-          />
-          {/* Video indicator overlay */}
-          <div className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:border-luxury-gold transition-all duration-300 pointer-events-none">
-            <Play size={16} className="fill-current" />
-          </div>
-        </>
+        <video
+          src={`${encodeURI(cover.src)}#t=1`}
+          className="absolute inset-0 w-full h-full object-cover z-0 bg-black pointer-events-none"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
       ) : (
-        <>
-          <Image
-            src={item.src}
-            alt={item.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
-
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white flex items-end justify-between gap-3 z-10 pointer-events-none">
-            <h3 className="font-serif text-sm sm:text-base font-extrabold tracking-tight leading-tight">
-              {item.name}
-            </h3>
-          </div>
-        </>
+        <Image
+          src={cover.src}
+          alt={group.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+        />
       )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
+
+      {/* Media-count badge (only worth showing once a project has more than one item) */}
+      {group.items.length > 1 && (
+        <div className="absolute top-4 right-4 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white text-[10px] font-extrabold tracking-widest uppercase pointer-events-none">
+          {videoCount > 0 && photoCount === 0 ? (
+            <Play size={11} className="fill-current" />
+          ) : (
+            <ImageIcon size={11} />
+          )}
+          {countLabel}
+        </div>
+      )}
+      {group.items.length === 1 && isVideo && (
+        <div className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center group-hover:bg-luxury-gold group-hover:text-luxury-charcoalDark group-hover:border-luxury-gold transition-all duration-300 pointer-events-none">
+          <Play size={16} className="fill-current" />
+        </div>
+      )}
+
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white flex items-end justify-between gap-3 z-10 pointer-events-none">
+        <h3 className="font-serif text-sm sm:text-base font-extrabold tracking-tight leading-tight">
+          {group.name}
+        </h3>
+      </div>
     </motion.div>
   );
 }
@@ -270,10 +292,21 @@ function ProjectCard({ item, index, projectTag, onOpen }) {
 export default function ProjectsGallery({ images, videos }) {
   const [filter, setFilter] = useState('all');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [activePhotoIndex, setActivePhotoIndex] = useState(null);
+  // The open lightbox is scoped to a single project's own items — not the
+  // full site-wide list — so Prev/Next only ever cycles through media that
+  // belongs to the project that was clicked.
+  const [activeGroup, setActiveGroup] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  // Collapse the description back to the 2-line preview every time a
+  // (different) project is opened.
+  useEffect(() => {
+    setShowFullDescription(false);
+  }, [activeGroup]);
 
   useEffect(() => {
-    if (activePhotoIndex !== null) {
+    if (activeGroup !== null) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -281,28 +314,57 @@ export default function ProjectsGallery({ images, videos }) {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [activePhotoIndex]);
+  }, [activeGroup]);
 
   const allItems = useMemo(() => [...images, ...videos], [images, videos]);
 
-  const filteredItems = useMemo(() => {
-    if (filter === 'photos') return images;
-    if (filter === 'videos') return videos;
-    return allItems;
-  }, [filter, images, videos, allItems]);
-
-  const visibleItems = filteredItems.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredItems.length;
-
-  const uniqueNames = useMemo(() => {
-    const names = [];
-    allItems.forEach((item) => {
-      if (!names.includes(item.name)) {
-        names.push(item.name);
+  // Group photos that share the same (humanized) name into one project card
+  // — e.g. all 7 "Elixir & Espresso" photos become a single sliding card.
+  // Videos are left exactly as before: one card per video, not grouped —
+  // just labelled "Project #1", "Project #2", etc. instead of the raw
+  // (often-identical) humanized filename.
+  const imageGroups = useMemo(() => {
+    const map = new Map();
+    images.forEach((item) => {
+      if (!map.has(item.name)) {
+        map.set(item.name, {
+          name: item.name,
+          items: [],
+          description: projectDescriptions[item.name] || null,
+        });
       }
+      map.get(item.name).items.push(item);
     });
-    return names;
-  }, [allItems]);
+    return Array.from(map.values());
+  }, [images]);
+
+  const videoGroups = useMemo(
+    () => videos.map((item, index) => ({ name: `Project #${index + 1}`, items: [item] })),
+    [videos]
+  );
+
+  const projectGroups = useMemo(
+    () => [...imageGroups, ...videoGroups],
+    [imageGroups, videoGroups]
+  );
+
+  // Apply the Photos/Videos tab filter within each project too, so opening
+  // a project while the "Videos" tab is active only slides through that
+  // project's videos (and projects left with nothing of that type drop out
+  // of the grid entirely).
+  const filteredGroups = useMemo(() => {
+    return projectGroups
+      .map((group) => {
+        let items = group.items;
+        if (filter === 'photos') items = items.filter((i) => i.type === 'image');
+        if (filter === 'videos') items = items.filter((i) => i.type === 'video');
+        return { ...group, items };
+      })
+      .filter((group) => group.items.length > 0);
+  }, [projectGroups, filter]);
+
+  const visibleGroups = filteredGroups.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredGroups.length;
 
   const tabs = [
     { key: 'all', label: 'All Work', count: allItems.length },
@@ -310,12 +372,31 @@ export default function ProjectsGallery({ images, videos }) {
     { key: 'videos', label: 'Videos', count: videos.length },
   ];
 
-  const activeItem = activePhotoIndex !== null ? filteredItems[activePhotoIndex] : null;
+  const activeItem = activeGroup ? activeGroup.items[activeIndex] : null;
+
+  const goPrev = useCallback(() => {
+    setActiveIndex((prev) => (activeGroup ? (prev - 1 + activeGroup.items.length) % activeGroup.items.length : 0));
+  }, [activeGroup]);
+
+  const goNext = useCallback(() => {
+    setActiveIndex((prev) => (activeGroup ? (prev + 1) % activeGroup.items.length : 0));
+  }, [activeGroup]);
+
+  useEffect(() => {
+    if (!activeGroup) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setActiveGroup(null);
+      if (e.key === 'ArrowLeft') goPrev();
+      if (e.key === 'ArrowRight') goNext();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [activeGroup, goPrev, goNext]);
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-luxury-beige to-white pt-28 pb-16 border-b border-luxury-beigeDark/30 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-luxury-beige to-white pt-28 pb-6 border-b border-luxury-beigeDark/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 bg-luxury-gold/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-luxury-gold/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -354,9 +435,9 @@ export default function ProjectsGallery({ images, videos }) {
       </section>
 
       {/* Grid */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="pt-10 pb-20 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {filteredItems.length === 0 ? (
+          {filteredGroups.length === 0 ? (
             <div className="text-center py-20 max-w-xl mx-auto">
               <div className="w-16 h-16 rounded-full bg-luxury-beige border border-luxury-beigeDark flex items-center justify-center mx-auto mb-6">
                 {filter === 'videos' ? (
@@ -383,23 +464,17 @@ export default function ProjectsGallery({ images, videos }) {
           ) : (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {visibleItems.map((item, index) => {
-                  let projectTag = 'Project #01';
-                  if (item.type === 'video') {
-                    const videoIdx = videos.findIndex(v => v.id === item.id);
-                    projectTag = `Project #${String(videoIdx + 2).padStart(2, '0')}`;
-                  }
-                  const absoluteIndex = filteredItems.findIndex(t => t.id === item.id);
-                  return (
-                    <ProjectCard
-                      key={item.id}
-                      item={item}
-                      index={index}
-                      projectTag={projectTag}
-                      onOpen={() => setActivePhotoIndex(absoluteIndex)}
-                    />
-                  );
-                })}
+                {visibleGroups.map((group, index) => (
+                  <ProjectCard
+                    key={group.name}
+                    group={group}
+                    index={index}
+                    onOpen={() => {
+                      setActiveGroup(group);
+                      setActiveIndex(0);
+                    }}
+                  />
+                ))}
               </div>
 
               {hasMore && (
@@ -417,19 +492,24 @@ export default function ProjectsGallery({ images, videos }) {
         </div>
       </section>
 
-      {/* Fullscreen Photo Lightbox Modal */}
+      {/* Fullscreen Photo Lightbox Modal — scoped to the clicked project only */}
       <AnimatePresence>
-        {activePhotoIndex !== null && activeItem && (
+        {activeGroup && activeItem && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-8 cursor-zoom-out"
-            onClick={() => setActivePhotoIndex(null)}
+            className="fixed inset-0 z-[150] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center overflow-y-auto p-4 sm:p-8 cursor-zoom-out"
+            onClick={() => setActiveGroup(null)}
           >
+            {/* Project name label */}
+            <div className="absolute top-6 left-6 right-16 sm:left-8 z-50 text-white/80 text-xs sm:text-sm font-extrabold uppercase tracking-widest truncate">
+              {activeGroup.name}
+            </div>
+
             {/* Close Button */}
             <button
-              onClick={() => setActivePhotoIndex(null)}
+              onClick={() => setActiveGroup(null)}
               className="absolute top-6 right-6 text-white/80 hover:text-luxury-gold transition-colors z-50 p-2.5 rounded-full hover:bg-white/10 cursor-pointer"
               aria-label="Close Lightbox"
             >
@@ -437,41 +517,53 @@ export default function ProjectsGallery({ images, videos }) {
             </button>
 
             {/* Left Chevron Swiper Button (Desktop) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setActivePhotoIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
-              }}
-              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-[160] w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark hover:border-luxury-gold transition-all duration-300 hidden md:flex items-center justify-center cursor-pointer"
-              aria-label="Previous"
-            >
-              <ChevronLeft size={24} />
-            </button>
+            {activeGroup.items.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goPrev();
+                }}
+                className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-[160] w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark hover:border-luxury-gold transition-all duration-300 hidden md:flex items-center justify-center cursor-pointer"
+                aria-label="Previous"
+              >
+                <ChevronLeft size={24} />
+              </button>
+            )}
 
             {/* Right Chevron Swiper Button (Desktop) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setActivePhotoIndex((prev) => (prev + 1) % filteredItems.length);
-              }}
-              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-[160] w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark hover:border-luxury-gold transition-all duration-300 hidden md:flex items-center justify-center cursor-pointer"
-              aria-label="Next"
-            >
-              <ChevronRight size={24} />
-            </button>
+            {activeGroup.items.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goNext();
+                }}
+                className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-[160] w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark hover:border-luxury-gold transition-all duration-300 hidden md:flex items-center justify-center cursor-pointer"
+                aria-label="Next"
+              >
+                <ChevronRight size={24} />
+              </button>
+            )}
 
-            {/* Media wrapper (Increased height on mobile) */}
+            {/* Media wrapper (Increased height on mobile). Photos shrink-wrap
+                to their actual rendered size (rather than stretching to the
+                full available width) so the description card below lines up
+                with the photo's real edges instead of the empty letterboxed
+                space beside it. Videos keep the old full-width box. */}
             <motion.div
               initial={{ scale: 0.95, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-6xl h-[68vh] sm:h-full max-h-[70vh] sm:max-h-[85vh] w-full flex items-center justify-center pointer-events-none"
+              className={`relative max-w-6xl flex items-center justify-center pointer-events-none rounded-2xl overflow-hidden ${
+                activeItem.type === 'video'
+                  ? 'w-full h-[68vh] sm:h-full max-h-[70vh] sm:max-h-[85vh]'
+                  : 'max-h-[55vh] sm:max-h-[70vh]'
+              }`}
             >
               {activeItem.type === 'video' ? (
                 <video
                   key={activeItem.src}
-                  src={`${activeItem.src}#t=1`}
+                  src={`${encodeURI(activeItem.src)}#t=1`}
                   controls
                   autoPlay
                   playsInline
@@ -481,40 +573,75 @@ export default function ProjectsGallery({ images, videos }) {
                 <Image
                   src={activeItem.src}
                   alt={activeItem.name}
-                  fill
+                  width={1600}
+                  height={1067}
                   sizes="100vw"
-                  className="object-contain rounded-2xl"
+                  className="w-auto h-auto max-w-full max-h-[55vh] sm:max-h-[70vh] object-contain rounded-2xl"
                   priority
                 />
               )}
             </motion.div>
 
+            {/* About this project — sits below the photo in the spare
+                vertical space, 2-line preview with a Read More toggle */}
+            {activeGroup.description && (
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="w-full max-w-3xl mt-4 sm:mt-6 px-5 py-4 sm:px-8 sm:py-6 rounded-2xl bg-black/50 backdrop-blur-sm pointer-events-auto shrink-0 z-[160]"
+              >
+                <div className={showFullDescription ? 'max-h-[26vh] sm:max-h-[30vh] overflow-y-auto pr-1' : ''}>
+                  {showFullDescription ? (
+                    activeGroup.description.map((para, i) => (
+                      <p
+                        key={i}
+                        className="text-white/90 font-semibold text-sm sm:text-base leading-relaxed mb-3 last:mb-0"
+                      >
+                        {para}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="text-white/90 font-semibold text-sm sm:text-base leading-relaxed line-clamp-2">
+                      {activeGroup.description[0]}
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={() => setShowFullDescription((v) => !v)}
+                  className="text-[10px] font-extrabold text-luxury-gold uppercase tracking-widest mt-2.5 hover:text-white transition-colors cursor-pointer"
+                >
+                  {showFullDescription ? 'Show Less' : 'Read More'}
+                </button>
+              </div>
+            )}
+
             {/* Mobile Swiper Navigation below media */}
-            <div className="flex md:hidden items-center justify-between mt-6 w-full max-w-xs px-4 pointer-events-auto shrink-0 z-[160]">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActivePhotoIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
-                }}
-                className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark transition-all duration-300 cursor-pointer"
-                aria-label="Previous"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <span className="text-xs font-bold text-white/50 tracking-widest uppercase">
-                {activePhotoIndex + 1} / {filteredItems.length}
-              </span>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActivePhotoIndex((prev) => (prev + 1) % filteredItems.length);
-                }}
-                className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark transition-all duration-300 cursor-pointer"
-                aria-label="Next"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
+            {activeGroup.items.length > 1 && (
+              <div className="flex md:hidden items-center justify-between mt-6 w-full max-w-xs px-4 pointer-events-auto shrink-0 z-[160]">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goPrev();
+                  }}
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark transition-all duration-300 cursor-pointer"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <span className="text-xs font-bold text-white/50 tracking-widest uppercase">
+                  {activeIndex + 1} / {activeGroup.items.length}
+                </span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goNext();
+                  }}
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white hover:bg-luxury-gold hover:text-luxury-charcoalDark transition-all duration-300 cursor-pointer"
+                  aria-label="Next"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
