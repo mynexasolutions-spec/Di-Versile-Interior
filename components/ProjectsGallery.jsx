@@ -544,11 +544,15 @@ export default function ProjectsGallery({ images, videos }) {
               </button>
             )}
 
-            {/* Media wrapper (Increased height on mobile). Photos shrink-wrap
-                to their actual rendered size (rather than stretching to the
-                full available width) so the description card below lines up
-                with the photo's real edges instead of the empty letterboxed
-                space beside it. Videos keep the old full-width box. */}
+            {/* Media wrapper. Photos shrink-wrap to their actual rendered
+                size (rather than stretching to the full available width) so
+                the desktop description overlay — sized to this wrapper —
+                lines up with the photo's real edges instead of the empty
+                letterboxed space beside it. Videos keep the old full-width
+                box. Mobile keeps the photo shorter (max-h-[55vh]) so the
+                description card below it has spare room to sit in; desktop
+                goes back to the taller box since the description sits over
+                the photo there instead. */}
             <motion.div
               initial={{ scale: 0.95, y: 15 }}
               animate={{ scale: 1, y: 0 }}
@@ -557,7 +561,7 @@ export default function ProjectsGallery({ images, videos }) {
               className={`relative max-w-6xl flex items-center justify-center pointer-events-none rounded-2xl overflow-hidden ${
                 activeItem.type === 'video'
                   ? 'w-full h-[68vh] sm:h-full max-h-[70vh] sm:max-h-[85vh]'
-                  : 'max-h-[55vh] sm:max-h-[70vh]'
+                  : 'max-h-[55vh] sm:max-h-[85vh]'
               }`}
             >
               {activeItem.type === 'video' ? (
@@ -576,20 +580,17 @@ export default function ProjectsGallery({ images, videos }) {
                   width={1600}
                   height={1067}
                   sizes="100vw"
-                  className="w-auto h-auto max-w-full max-h-[55vh] sm:max-h-[70vh] object-contain rounded-2xl"
+                  className="w-auto h-auto max-w-full max-h-[55vh] sm:max-h-[85vh] object-contain rounded-2xl"
                   priority
                 />
               )}
-            </motion.div>
 
-            {/* About this project — sits below the photo in the spare
-                vertical space, 2-line preview with a Read More toggle */}
-            {activeGroup.description && (
-              <div
-                onClick={(e) => e.stopPropagation()}
-                className="w-full max-w-3xl mt-4 sm:mt-6 px-5 py-4 sm:px-8 sm:py-6 rounded-2xl bg-black/50 backdrop-blur-sm pointer-events-auto shrink-0 z-[160]"
-              >
-                <div className={showFullDescription ? 'max-h-[26vh] sm:max-h-[30vh] overflow-y-auto pr-1' : ''}>
+              {/* Desktop only: description overlaid directly on the photo */}
+              {activeGroup.description && (
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="hidden sm:block absolute bottom-0 left-0 right-0 rounded-b-2xl bg-black/60 backdrop-blur-sm px-8 py-6 pointer-events-auto"
+                >
                   {showFullDescription ? (
                     activeGroup.description.map((para, i) => (
                       <p
@@ -601,6 +602,39 @@ export default function ProjectsGallery({ images, videos }) {
                     ))
                   ) : (
                     <p className="text-white/90 font-semibold text-sm sm:text-base leading-relaxed line-clamp-2">
+                      {activeGroup.description[0]}
+                    </p>
+                  )}
+                  <button
+                    onClick={() => setShowFullDescription((v) => !v)}
+                    className="text-[10px] font-extrabold text-luxury-gold uppercase tracking-widest mt-2.5 hover:text-white transition-colors cursor-pointer"
+                  >
+                    {showFullDescription ? 'Show Less' : 'Read More'}
+                  </button>
+                </div>
+              )}
+            </motion.div>
+
+            {/* Mobile only: description sits below the photo in the spare
+                vertical space, unchanged from before — 2-line preview with
+                a Read More toggle */}
+            {activeGroup.description && (
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="sm:hidden w-full max-w-3xl mt-4 px-5 py-4 rounded-2xl bg-black/50 backdrop-blur-sm pointer-events-auto shrink-0 z-[160]"
+              >
+                <div className={showFullDescription ? 'max-h-[26vh] overflow-y-auto pr-1' : ''}>
+                  {showFullDescription ? (
+                    activeGroup.description.map((para, i) => (
+                      <p
+                        key={i}
+                        className="text-white/90 font-semibold text-sm leading-relaxed mb-3 last:mb-0"
+                      >
+                        {para}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="text-white/90 font-semibold text-sm leading-relaxed line-clamp-2">
                       {activeGroup.description[0]}
                     </p>
                   )}
