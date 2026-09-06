@@ -1,6 +1,14 @@
 export const services = [
   // ── Interior Design Services ─────────────────────────────
   {
+    id: 'modular-customized-furniture',
+    name: 'Modular & Customized Furniture',
+    category: 'interior',
+    icon: 'ShoppingBag',
+    image: '/images/services/modular-customized-furniture.webp',
+    description: 'Explore our curated range of modular furniture, with select pieces available to experience at our store and an extensive catalogue to choose from. Select from our collection, share your reference images, or work with us to customize a piece to suit your space, style, and requirements.',
+  },
+  {
     id: 'space-planning-layout-design',
     name: 'Space Planning & Layout Design',
     category: 'interior',
